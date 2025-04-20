@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: "JetBrains Mono", monospace;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 400;
+  src: url(/fonts/JetBrainsMono-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 700;
+  src: url(/fonts/JetBrainsMono-Bold.woff2) format("woff2");
+}
