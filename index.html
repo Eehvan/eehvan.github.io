@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -209,47 +210,36 @@
     section { display: none; }
     section.active { display: block; }
 
-    /* Aggiungi questo stile nel blocco CSS esistente */
-    .audio-item {
-      margin-bottom: 20px;
-      text-align: center;
-    }
+    
 
-    .audio-item audio {
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: 10px;
-    }
+/* Per applicare un effetto fade-in al caricamento */
+body {
+  opacity: 0;  /* Impostiamo l'iniziale invisibilità */
+  transition: opacity 1s ease-in-out;  /* Transizione dell'opacità */
+}
 
-    .audio-item p {
-      color: #ccc;
-      font-size: 1rem;
-    }
+/* Quando il contenuto è completamente caricato, rendiamo visibile il body */
+body.loaded {
+  opacity: 1;
+}
 
-    /* Per applicare un effetto fade-in al caricamento */
-    body {
-      opacity: 0;  /* Impostiamo l'iniziale invisibilità */
-      transition: opacity 1s ease-in-out;  /* Transizione dell'opacità */
-    }
+/* Transizioni per altre sezioni */
+header, section, footer, .content, .video-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 
-    /* Quando il contenuto è completamente caricato, rendiamo visibile il body */
-    body.loaded {
-      opacity: 1;
-    }
+body.loaded header,
+body.loaded section,
+body.loaded footer,
+body.loaded .content,
+body.loaded .video-item {
+  opacity: 1;
+}
 
-    /* Transizioni per altre sezioni */
-    header, section, footer, .content, .video-item {
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
 
-    body.loaded header,
-    body.loaded section,
-    body.loaded footer,
-    body.loaded .content,
-    body.loaded .video-item {
-      opacity: 1;
-    }
+    
+    
     
   </style>
 </head>
@@ -262,7 +252,6 @@
     <a href="#sounddesign" class="nav-link">Game Audio</a>
     <a href="#animationprojects" class="nav-link">Animation Projects</a>
     <a href="#contact" class="nav-link">Contact</a>
-    <a href="#mymusic" class="nav-link">My Music</a> <!-- Nuovo link per la sezione "My Music" -->
   </nav>
 
   <header>
@@ -286,47 +275,226 @@
     </div>
   </section>
 
-  <section class="content" id="mymusic">
-    <h2>My Music</h2>
-    <p>Here are some of my music compositions that showcase my skills as a musician and sound designer. Enjoy the sounds!</p>
-    
-    <!-- First track -->
-    <div class="audio-item">
-      <audio controls>
-        <source src="your-music-file-1.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
-      </audio>
-      <p>Track Title 1</p>
+  <section class="video-section" id="demoreel">
+    <h2>Demo Reel</h2>
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer1">
+        <video width="100%" id="video1" controls>
+          <source src="Demoreel.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="video-description">This is a representative video of my main work.</div>
+  </section>
+
+  <section class="content" id="skills">
+    <h2>Skills</h2>
+    <p>- Sound Design for video games and animations</p>
+    <p>- Music composition</p>
+    <p>- Experience with audio software like Ableton, Reaper, Pro Tools</p>
+    <p>- Audio editing and mixing</p>
+  </section>
+
+<section class="video-section" id="sounddesign">
+  <h2>Game Audio</h2>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <p style="font-size: 1.1rem; color: #ccc;">
+      I’m currently working on the Music and the Sound Design for a videogame.<br><br>
+      I will update this page once I have more material and implementations to show.<br><br>
+      Meanwhile, enjoy a funny Character voices creation process and the first glimpse<br>
+      of a trailer with my music!
+    </p>
+  </div>
+
+  <div class="video-wrapper" style="gap: 20px; flex-wrap: wrap;">
+    <div class="video-item" id="videoContainer4" style="flex: 1 1 48%;">
+      <video width="100%" id="video4" controls>
+        <source src="My Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
-    <!-- Second track -->
-    <div class="audio-item">
-      <audio controls>
-        <source src="your-music-file-2.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
-      </audio>
-      <p>Track Title 2</p>
+    <div class="video-item" id="videoContainer5" style="flex: 1 1 48%;">
+      <video width="100%" id="video5" controls>
+        <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <div class="video-description" style="margin-top: 60px;">
+    I'm currently working on the complete audio design for a dark, atmospheric
+    platformer inspired by INSIDE. My role includes creating immersive sound effects,
+    dynamic music, and ambient soundscapes that support the game’s emotional tone and
+    narrative pacing. The project focuses heavily on minimalism and tension, allowing
+    sound to play a key role in storytelling and world-building.
+  </div>
+  <div class="video-wrapper">
+    <div class="video-item" id="videoContainer6">
+      <video width="100%" id="video6" controls>
+        <source src="inverta.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <section class="video-section" id="animationprojects">
+    <h2>Animation Projects</h2>
+    <div style="text-align: center; margin-bottom: 30px;">
+      <p style="font-size: 1.1rem; color: #ccc;">
+        Animations scenes I reinvented with my own touch.<br>
+        <span style="font-size: 0.9rem; color: #777;">(animations by KIECA)</span>
+      </p>
     </div>
 
-    <!-- Third track -->
-    <div class="audio-item">
-      <audio controls>
-        <source src="your-music-file-3.mp3" type="audio/mp3">
-        Your browser does not support the audio tag.
-      </audio>
-      <p>Track Title 3</p>
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer2">
+        <video width="100%" id="video2" controls>
+          <source src="luffy vs lucci.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer3">
+        <video width="100%" id="video3" controls>
+          <source src="law vs kurohige.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </section>
 
+
+
+<section class="content" id="contact">
+  <h2>Contact</h2>
+  <p>
+    <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> |
+    <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> |
+    <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> |
+    <a href="mailto:ivanbrugolo@gmail.com" style="color: #ab4e52;">Email</a>
+  </p>
+  <form action="https://formspree.io/f/movdawdk" method="POST" style="margin-top: 30px; display: flex; flex-direction: column; gap: 15px; max-width: 500px;">
+    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; background: #1e1e1e; color: white; border: 1px solid #ab4e52;">
+    <input type="email" name="_replyto" placeholder="Your Email" required style="padding: 10px; background: #1e1e1e; color: white; border: 1px solid #ab4e52;">
+    <textarea name="message" placeholder="Your Message" required rows="5" style="padding: 10px; background: #1e1e1e; color: white; border: 1px solid #ab4e52;"></textarea>
+    <button type="submit" style="padding: 10px; background-color: #ab4e52; color: white; border: none; cursor: pointer;">Send</button>
+  </form>
+</section>
+
   <footer>
-    <p>&copy; 2025 Ivan, All Rights Reserved</p>
+    &copy; 2025 Creative Portfolio - Created by Me
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      document.body.classList.add("loaded");
+    const header = document.querySelector('header');
+
+    header.addEventListener('mousemove', (e) => {
+      const { width, height } = header.getBoundingClientRect();
+      const x = e.clientX - width / 2;
+      const y = e.clientY - height / 2;
+      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
+    });
+
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const id = link.getAttribute('href').substring(1);
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+
+        const target = document.getElementById(id);
+        target.classList.add('active');
+      });
+    });
+
+    // GLOW EFFECT for all videos
+    const setupGlow = (videoId, containerId) => {
+      const video = document.getElementById(videoId);
+      const container = document.getElementById(containerId);
+      video.addEventListener('play', () => container.classList.add('glow'));
+      video.addEventListener('pause', () => container.classList.remove('glow'));
+      video.addEventListener('ended', () => container.classList.remove('glow'));
+    };
+
+    setupGlow("video1", "videoContainer1");
+    setupGlow("video2", "videoContainer2");
+    setupGlow("video3", "videoContainer3");
+    setupGlow("video4", "videoContainer4");
+    setupGlow("video5", "videoContainer5");
+    setupGlow("video6", "videoContainer6");
+  </script>
+  
+
+<!-- Sezione per effetti sonori dei clic -->
+<section class="click-sound-section">
+  <h2>Interactive Sound Effects</h2>
+  <p>Click anywhere on this page to hear a random sound effect!</p>
+</section>
+
+
+<!-- Aggiungi gli audio dei suoni del click -->
+<audio id="click-sound-1" src="click-sound-1.mp3" preload="auto"></audio>
+<audio id="click-sound-2" src="click-sound-2.mp3" preload="auto"></audio>
+<audio id="click-sound-3" src="click-sound-3.mp3" preload="auto"></audio>
+
+<script>
+  // Seleziona tutti gli elementi audio
+  const clickSounds = [
+    document.getElementById('click-sound-1'),
+    document.getElementById('click-sound-2'),
+    document.getElementById('click-sound-3')
+  ];
+
+  // Imposta il volume per tutti i suoni
+  clickSounds.forEach(sound => {
+    sound.volume = 0.3;  // Regola il volume a tua preferenza
+  });
+
+  // Funzione per selezionare e riprodurre un suono random
+  const playRandomClickSound = () => {
+    // Seleziona un indice casuale
+    const randomIndex = Math.floor(Math.random() * clickSounds.length);
+    
+    // Riproduce il suono casuale
+    clickSounds[randomIndex].play();
+  };
+
+  // Aggiungi l'evento 'click' a tutti gli elementi che vuoi riproducano il suono
+  document.querySelectorAll('a, button').forEach(element => {
+    element.addEventListener('click', playRandomClickSound);
+  });
+
+  // Opzionale: Aggiungi l'effetto anche sui link di navigazione
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', playRandomClickSound);
+  });
+</script>
+
+
+    <!-- Aggiungi il codice JavaScript per il fade-in qui -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
     });
   </script>
+  
+
+
+  
 </body>
 </html>
-
