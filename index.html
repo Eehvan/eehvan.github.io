@@ -151,18 +151,25 @@
       text-align: center;
     }
 
+    /* Animazione di transizione per il menu */
+    section {
+      transition: opacity 1s ease-in-out;
+    }
+    section.hidden {
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
 
   <!-- Header e barra di navigazione -->
   <nav>
-    <a href="#aboutme">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#demoreel">Demo Reel</a>
-    <a href="#sounddesign">Sound Design</a>
-    <a href="#animationprojects">Animation Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#aboutme" class="nav-link">About Me</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#demoreel" class="nav-link">Demo Reel</a>
+    <a href="#sounddesign" class="nav-link">Sound Design</a>
+    <a href="#animationprojects" class="nav-link">Animation Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
   <header>
@@ -254,13 +261,33 @@
   <!-- Sezione Contatti -->
   <section class="content" id="contact">
     <h2>Contact</h2>
-    <p>SoundCloud | LinkedIn | Instagram | Email</p>
-    <p>Puoi trovare tutti i miei contatti e le mie informazioni social qui.</p>
+    <p>
+      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> | 
+      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> | 
+      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> | 
+      <a href="mailto:ivanbrugolo@gmail.com" style="color: #ab4e52;">Email</a>
+    </p>
   </section>
 
   <footer>
     &copy; 2025 Portfolio Creativo - Creato da Me
   </footer>
 
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Animazione di transizione per le pagine
+    navLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        sections.forEach(section => {
+          section.classList.add('hidden');
+        });
+        document.getElementById(targetId).classList.remove('hidden');
+      });
+    });
+  </script>
 </body>
 </html>
