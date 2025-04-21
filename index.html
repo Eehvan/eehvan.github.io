@@ -22,7 +22,7 @@
     }
 
     header {
-      height: 100vh;
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -31,16 +31,16 @@
     }
 
     header h1 {
-      font-size: 5rem;
+      font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       color: #ff0000;
-      letter-spacing: 5px;
+      letter-spacing: 3px;
       animation: fadeIn 2s ease-in-out;
     }
 
     header p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: #ccc;
       animation: fadeIn 2s ease-in-out 0.5s;
     }
@@ -57,7 +57,7 @@
     }
 
     .content {
-      padding: 50px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
@@ -73,6 +73,20 @@
       color: #bbb;
       max-width: 700px;
       margin: 20px auto;
+    }
+
+    .video-section {
+      padding: 50px 20px;
+      background-color: #1a1a1a;
+    }
+
+    .video-section iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 43, 43, 0.3);
     }
 
     footer {
@@ -96,12 +110,22 @@
 
   <section class="content">
     <h2>Chi Sono</h2>
-    <p>Sono un sviluppatore web che crea esperienze digitali innovative. Amo lavorare su progetti che combinano design, interattività e un tocco di creatività unica.</p>
+    <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
+    <p>Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.</p>
+    <p>I studied Music & Sound Design at MOHOLE (MI) and obtained a degree in this field.</p>
+    <p>Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out of an image!</p>
+  </section>
+
+  <section class="video-section">
+    <h2>I miei video</h2>
+    <p>Guarda alcuni dei miei video e progetti digitali.</p>
+    <!-- Esempio di video YouTube -->
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video esempio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </section>
 
   <section class="content">
     <h2>Progetti Recenti</h2>
-    <p>Alcuni dei miei lavori più recenti includono siti interattivi, applicazioni e design per brand emergenti. Mi piace sperimentare e spingere i limiti della creatività nel web design.</p>
+    <p>Ho lavorato su diversi progetti che uniscono funzionalità, design e innovazione. Ogni progetto ha una storia e una sfida unica che ho affrontato con passione.</p>
   </section>
 
   <footer>
