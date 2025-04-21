@@ -1,163 +1,175 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import "./App.css";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivan Brugolo Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-const pageTransition = {
-  initial: { opacity: 0, y: 10 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-  exit: { opacity: 0, y: -10, transition: { duration: 0.2 } }
-};
+    body {
+      font-family: 'Anonymous Pro', monospace;
+      background-color: #fff;
+      color: #000;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-const Home = () => (
-  <motion.div className="section" {...pageTransition}>
-    <h2>Chi Sono</h2>
+    header {
+      display: flex;
+      justify-content: flex-end;
+      background-color: #fff;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ab4e52;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #000;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      color: #ab4e52;
+      margin-bottom: 20px;
+    }
+
+    .video-row {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+
+    video {
+      width: 45%;
+      max-width: 400px;
+      height: auto;
+      background: #ddd;
+    }
+
+    .video-text {
+      flex: 1;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    ul.contact-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.contact-list li {
+      margin-bottom: 10px;
+    }
+
+    ul.contact-list a {
+      color: #ab4e52;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#demo">Demo Reel</a>
+      <a href="#sounddesign">Sound Design</a>
+      <a href="#animation">Animation Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h1>Chi Sono</h1>
     <p>
       I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.
-      <br /><br />
+      <br><br>
       Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.
-      <br /><br />
+      <br><br>
       I studied Music & Sound Design at MOHOLE (MI) and obtained a degree in this field.
-      <br /><br />
+      <br><br>
       Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out.
     </p>
-  </motion.div>
-);
+  </section>
 
-const VideoSection = ({ videos }) => (
-  <motion.div className="section" {...pageTransition}>
-    <div className="video-container">
-      {videos.map((src, idx) => (
-        <div className="video-block" key={idx}>
-          <video controls src={src} className="video" />
-          <div className="video-text">
-            <p>Placeholder text for video {idx + 1}. This is a short description related to the video content.</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </motion.div>
-);
-
-const Skills = () => (
-  <motion.div className="section" {...pageTransition}>
+  <section id="skills">
     <h2>Skills</h2>
     <p>Placeholder for skills content.</p>
-  </motion.div>
-);
+  </section>
 
-const DemoReel = () => <VideoSection videos={["/videos/demo.mp4"]} />;
-const SoundDesign = () => <VideoSection videos={["/videos/sd1.mp4", "/videos/sd2.mp4"]} />;
-const AnimationProjects = () => <VideoSection videos={["/videos/anim1.mp4", "/videos/anim2.mp4"]} />;
-
-const Contact = () => (
-  <motion.div className="section" {...pageTransition}>
-    <h2>Contact</h2>
-    <ul>
-      <li><a href="mailto:ivanbrugolo@gmail.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/ivanbrugolo/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-      <li><a href="https://soundcloud.com/hvnhvnn" target="_blank" rel="noreferrer">SoundCloud</a></li>
-      <li><a href="https://www.instagram.com/eeh.van/" target="_blank" rel="noreferrer">Instagram</a></li>
-    </ul>
-  </motion.div>
-);
-
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <nav className="navbar">
-          <ul>
-            <li><Link to="/">About Me</Link></li>
-            <li><Link to="/skills">Skills</Link></li>
-            <li><Link to="/demo">Demo Reel</Link></li>
-            <li><Link to="/sounddesign">Sound Design</Link></li>
-            <li><Link to="/animation">Animation Projects</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </nav>
-        <main>
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/demo" element={<DemoReel />} />
-              <Route path="/sounddesign" element={<SoundDesign />} />
-              <Route path="/animation" element={<AnimationProjects />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </AnimatePresence>
-        </main>
+  <section id="demo">
+    <h2>Demo Reel</h2>
+    <div class="video-row">
+      <video controls src="videos/demo.mp4"></video>
+      <div class="video-text">
+        <p>Placeholder text for the Demo Reel video.</p>
       </div>
-    </Router>
-  );
-}
+    </div>
+  </section>
 
-export default App;
+  <section id="sounddesign">
+    <h2>Sound Design</h2>
+    <div class="video-row">
+      <video controls src="videos/sd1.mp4"></video>
+      <div class="video-text">
+        <p>Placeholder text for Sound Design video 1.</p>
+      </div>
+    </div>
+    <div class="video-row">
+      <video controls src="videos/sd2.mp4"></video>
+      <div class="video-text">
+        <p>Placeholder text for Sound Design video 2.</p>
+      </div>
+    </div>
+  </section>
 
-/* App.css */
-body {
-  margin: 0;
-  font-family: 'Anonymous Pro', monospace;
-  background-color: #fff;
-  color: #333;
-}
+  <section id="animation">
+    <h2>Animation Projects</h2>
+    <div class="video-row">
+      <video controls src="videos/anim1.mp4"></video>
+      <div class="video-text">
+        <p>Placeholder text for Animation Project video 1.</p>
+      </div>
+    </div>
+    <div class="video-row">
+      <video controls src="videos/anim2.mp4"></video>
+      <div class="video-text">
+        <p>Placeholder text for Animation Project video 2.</p>
+      </div>
+    </div>
+  </section>
 
-.App {
-  text-align: left;
-  padding: 20px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  background-color: #fff;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #ab4e52;
-  font-weight: bold;
-}
-
-.section {
-  padding: 40px 0;
-}
-
-.video-container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.video-block {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.video {
-  width: 300px;
-  height: auto;
-}
-
-.video-text {
-  max-width: 600px;
-  color: #333;
-}
-
-h2 {
-  color: #ab4e52;
-}
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><a href="mailto:ivanbrugolo@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/ivanbrugolo/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://soundcloud.com/hvnhvnn" target="_blank">SoundCloud</a></li>
+      <li><a href="https://www.instagram.com/eeh.van/" target="_blank">Instagram</a></li>
+    </ul>
+  </section>
+</body>
+</html>
