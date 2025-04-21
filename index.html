@@ -314,6 +314,16 @@
   </footer>
 
   <script>
+    // Effetto di movimento dell'immagine sul mouse
+    const header = document.querySelector('header');
+
+    header.addEventListener('mousemove', (e) => {
+      const { width, height } = header.getBoundingClientRect();
+      const x = e.clientX - width / 2;
+      const y = e.clientY - height / 2;
+      header.style.backgroundPosition = `${50 + x / width * 10}% ${50 + y / height * 10}%`;
+    });
+
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
