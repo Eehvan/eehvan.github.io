@@ -403,5 +403,38 @@
     setupGlow("video5", "videoContainer5");
     setupGlow("video6", "videoContainer6");
   </script>
+  
+
+  <section class="click-sound-section">
+  <h2>Interactive Sound Effects</h2>
+  <p>Click anywhere on this page to hear a sound effect!</p>
+</section>
+
+<a href="#" class="clickable-link">Click Me</a>
+
+<!-- Aggiungi l'audio del suono del click -->
+<audio id="click-sound" src="click-sound.mp3" preload="auto"></audio>
+
+<script>
+  // Seleziona l'elemento audio
+  const clickSound = document.getElementById('click-sound');
+
+  // Funzione per riprodurre il suono al click
+  const playClickSound = () => {
+    clickSound.play();
+  };
+
+  // Aggiungi l'evento 'click' a tutti gli elementi che vuoi riproducano il suono
+  document.querySelectorAll('a, button').forEach(element => {
+    element.addEventListener('click', playClickSound);
+  });
+
+  // Opzionale: Aggiungi l'effetto anche sui link di navigazione
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', playClickSound);
+  });
+</script>
+
+  
 </body>
 </html>
