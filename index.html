@@ -249,67 +249,87 @@ nav a {
 }
 
 
-    /* Stili generali per il menu */
+
+
+    
+
+/* Impostazioni generali per il menu di navigazione */
 nav {
-  background-color: #333;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Trasparenza */
+  backdrop-filter: blur(10px); /* Sfocatura dello sfondo per un effetto moderno */
+  padding: 10px 20px;
+  z-index: 1000; /* Assicurati che il menu sia sopra gli altri contenuti */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Leggera ombra per separare il menu dal contenuto */
+  transition: background-color 0.3s ease; /* Transizione morbida per il cambio di colore */
 }
 
+/* Container per i link del menu */
 .menu-container {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  align-items: center;
 }
 
+/* Link del menu */
 .nav-link {
   color: white;
   text-decoration: none;
   font-size: 18px;
   padding: 10px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transizione per il colore e l'effetto hover */
   display: block;
 }
 
+/* Hover del link del menu */
 .nav-link:hover {
-  background-color: #575757;
-  border-radius: 5px;
+  color: #ffcc00; /* Colore d'accento giallo */
+  transform: translateY(-2px); /* Effetto di movimento su hover */
 }
 
+/* Icona del menu per dispositivi mobili */
+.menu-toggle {
+  display: none; /* Mostriamo solo su mobile */
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
 
-    
-
-/* Stili per il menu mobile */
+/* Media query per dispositivi mobili */
 @media screen and (max-width: 768px) {
   .menu-container {
-    display: none; /* Nascondi il menu di default */
-    flex-direction: column; /* Posiziona i link uno sotto l'altro */
-    align-items: center; /* Centra gli elementi */
+    display: none;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Un po' più scuro su mobile */
+    backdrop-filter: none; /* Rimuoviamo lo sfondo sfocato su mobile */
+    padding: 20px 0;
   }
 
   .menu-container.open {
-    display: flex; /* Mostra il menu quando è aperto */
+    display: flex;
   }
 
-  /* Icona hamburger */
   .menu-toggle {
-    background-color: #333;
-    border: none;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    display: block;
+    display: block; /* Mostra il pulsante di menu su mobile */
   }
 
   .nav-link {
     font-size: 20px;
     padding: 15px 0;
-    width: 100%; /* Rende i link a schermo intero per facilità di clic */
+    width: 100%;
     text-align: center;
+    transition: none; /* Rimuoviamo la transizione su hover */
   }
 }
+
 
 
     
@@ -599,13 +619,14 @@ nav {
 
 
     <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuContainer = document.querySelector('.menu-container');
+const menuToggle = document.querySelector('.menu-toggle');
+const menuContainer = document.querySelector('.menu-container');
 
-    // Aggiungi un listener per il bottone hamburger
-    menuToggle.addEventListener('click', function() {
-      menuContainer.classList.toggle('open');
-    });
+// Aggiungi un listener per il bottone hamburger
+menuToggle.addEventListener('click', function() {
+  menuContainer.classList.toggle('open');
+});
+
   </script>
   
 
