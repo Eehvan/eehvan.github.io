@@ -387,6 +387,46 @@ nav {
   transform: rotateY(15deg) rotateX(15deg); /* Effetto di rotazione su entrambi gli assi */
 }
 
+
+
+
+    .project-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #ab4e52;
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.project-link img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.project-link span {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.project-link:hover {
+  transform: scale(1.05);
+}
+
+
     
     
     
@@ -433,7 +473,23 @@ nav {
       <p><a href="https://drive.google.com/file/d/1WGZodX0-DwIqSoJ1EcbxCoJqQIUfsf7z/view?usp=sharing" style="color: #ab4e52;">Check my CV</a></p>
     </div>
     </div>
-    
+
+  
+
+<div class="project-links">
+  <a href="#sounddesign" class="project-link">
+    <img src="game.png" alt="Game Audio">
+    <span>Game Audio</span>
+  </a>
+  <a href="#animation" class="project-link">
+    <img src="animation.png" alt="Animation Projects">
+    <span>Animation Projects</span>
+  </a>
+</div>
+
+
+
+
   </div>
 </section>
 
