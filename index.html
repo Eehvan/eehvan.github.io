@@ -248,21 +248,92 @@ nav a {
   font-size: 18px;
 }
 
+
+    /* Stili generali per il menu */
+nav {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+}
+
+.nav-link:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+
+    
+
+/* Stili per il menu mobile */
+@media screen and (max-width: 768px) {
+  .menu-container {
+    display: none; /* Nascondi il menu di default */
+    flex-direction: column; /* Posiziona i link uno sotto l'altro */
+    align-items: center; /* Centra gli elementi */
+    width: 100%;
+  }
+
+  .menu-container.open {
+    display: flex; /* Mostra il menu quando è aperto */
+  }
+
+  /* Icona hamburger */
+  .menu-toggle {
+    background-color: #333;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .nav-link {
+    font-size: 20px;
+    padding: 15px 0;
+    width: 100%; /* Rende i link a schermo intero per facilità di clic */
+    text-align: center;
+  }
+}
+
+
     
     
   </style>
 </head>
 <body>
 
-  <nav>
+<nav>
+  <!-- Bottone per aprire/chiudere il menu su mobile -->
+  <button class="menu-toggle">&#9776;</button> <!-- Icona hamburger -->
+  
+  <!-- Links del menu -->
+  <div class="menu-container">
     <a href="#aboutme" class="nav-link">About Me</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#demoreel" class="nav-link">Demo Reel</a>
     <a href="#sounddesign" class="nav-link">Game Audio</a>
     <a href="#animationprojects" class="nav-link">Animation Projects</a>
-    <a href="#mymusic" class="nav-link">My Music</a> <!-- Link alla sezione "My Music" -->
+    <a href="#mymusic" class="nav-link">My Music</a>
     <a href="#contact" class="nav-link">Contact</a>
-  </nav>
+  </div>
+</nav>
+
 
   <header>
     <h1>About Me</h1>
@@ -523,6 +594,17 @@ nav a {
   <script>
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
+    });
+  </script>
+
+
+    <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuContainer = document.querySelector('.menu-container');
+
+    // Aggiungi un listener per il bottone hamburger
+    menuToggle.addEventListener('click', function() {
+      menuContainer.classList.toggle('open');
     });
   </script>
   
