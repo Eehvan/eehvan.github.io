@@ -238,6 +238,32 @@ body.loaded .video-item {
 
 
 
+/* Crea l'ombra pixelata */
+header {
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.7);  /* Ombra nera */
+  border-radius: 50%;  /* Forma arrotondata */
+  pointer-events: none;  /* Non interferisce con l'interazione dell'utente */
+  transform: scale(0);  /* Inizialmente invisibile */
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+/* Posiziona l'ombra in modo che segua il cursore */
+header:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+
+    
     
   </style>
 </head>
@@ -487,6 +513,25 @@ body.loaded .video-item {
   <script>
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
+    });
+  </script>
+  
+
+
+    <script>
+    // Aggiungi il codice per il cursore qui
+    const header = document.querySelector('header');
+    const cursorShadow = header.querySelector('::after');
+
+    header.addEventListener('mousemove', (e) => {
+      const { clientX: x, clientY: y } = e;
+
+      // Ottieni l'elemento ::after (ombra)
+      const shadow = header.querySelector('::after');
+
+      // Posiziona l'ombra sotto il cursore
+      shadow.style.left = `${x - 10}px`;  // Offset per centrare l'ombra sotto il cursore
+      shadow.style.top = `${y - 10}px`;   // Offset per centrare l'ombra sotto il cursore
     });
   </script>
 
