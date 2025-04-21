@@ -60,13 +60,13 @@
       margin-bottom: 15px;
       color: #ab4e52; /* Colore rosso personalizzato */
       letter-spacing: 3px;
-      animation: fadeIn 2s ease-in-out;
+      animation: fadeIn 1s ease-in-out;
     }
 
     header p {
       font-size: 1.2rem;
       color: #ccc;
-      animation: fadeIn 2s ease-in-out 0.5s;
+      animation: fadeIn 1s ease-in-out 0.5s;
     }
 
     @keyframes fadeIn {
@@ -138,6 +138,7 @@
       vertical-align: top;
       height: 450px;
       line-height: 450px; /* Centra il testo verticalmente */
+      text-align: left;
     }
 
     footer {
@@ -153,7 +154,7 @@
 
     /* Animazione di transizione per il menu */
     section {
-      transition: opacity 1s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
     }
     section.hidden {
       opacity: 0;
@@ -174,7 +175,7 @@
 
   <header>
     <h1>Chi Sono</h1>
-    <p>Un musicista e sound designer appassionato di videogiochi.</p>
+    <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
   </header>
 
   <!-- Sezione Chi Sono -->
@@ -191,27 +192,27 @@
     <h2>I miei video</h2>
     <p>Guarda alcuni dei miei video e progetti digitali.</p>
     <div>
-      <div class="video-description">
-        Video 1 - Questo è un placeholder per il video che caricherai. Puoi descrivere brevemente il contenuto del video qui.
-      </div>
       <div class="video-item">
         Video 1 - Carica il tuo file video
       </div>
+      <div class="video-description">
+        Video 1 - Questo è un placeholder per il video che caricherai. Puoi descrivere brevemente il contenuto del video qui.
+      </div>
     </div>
     <div>
-      <div class="video-description">
-        Video 2 - Descrizione del secondo video. Questo è il contenuto che hai creato per il secondo video, puoi metterci delle informazioni sul progetto.
-      </div>
       <div class="video-item">
         Video 2 - Carica il tuo file video
       </div>
+      <div class="video-description">
+        Video 2 - Descrizione del secondo video. Questo è il contenuto che hai creato per il secondo video, puoi metterci delle informazioni sul progetto.
+      </div>
     </div>
     <div>
-      <div class="video-description">
-        Video 3 - Un altro placeholder. Descrizione del progetto o del video che hai creato.
-      </div>
       <div class="video-item">
         Video 3 - Carica il tuo file video
+      </div>
+      <div class="video-description">
+        Video 3 - Un altro placeholder. Descrizione del progetto o del video che hai creato.
       </div>
     </div>
   </section>
@@ -220,19 +221,19 @@
   <section class="video-section" id="sounddesign">
     <h2>Sound Design</h2>
     <div>
-      <div class="video-description">
-        Sound Design Video 1 - Descrizione del progetto 1 di sound design.
-      </div>
       <div class="video-item">
         Sound Design Video 1 - Carica il tuo file
       </div>
+      <div class="video-description">
+        Sound Design Video 1 - Descrizione del progetto 1 di sound design.
+      </div>
     </div>
     <div>
-      <div class="video-description">
-        Sound Design Video 2 - Descrizione del progetto 2 di sound design.
-      </div>
       <div class="video-item">
         Sound Design Video 2 - Carica il tuo file
+      </div>
+      <div class="video-description">
+        Sound Design Video 2 - Descrizione del progetto 2 di sound design.
       </div>
     </div>
   </section>
@@ -241,19 +242,19 @@
   <section class="video-section" id="animationprojects">
     <h2>Animation Projects</h2>
     <div>
-      <div class="video-description">
-        Animation Video 1 - Descrizione del progetto di animazione 1.
-      </div>
       <div class="video-item">
         Animation Video 1 - Carica il tuo file
       </div>
+      <div class="video-description">
+        Animation Video 1 - Descrizione del progetto di animazione 1.
+      </div>
     </div>
     <div>
-      <div class="video-description">
-        Animation Video 2 - Descrizione del progetto di animazione 2.
-      </div>
       <div class="video-item">
         Animation Video 2 - Carica il tuo file
+      </div>
+      <div class="video-description">
+        Animation Video 2 - Descrizione del progetto di animazione 2.
       </div>
     </div>
   </section>
@@ -277,7 +278,7 @@
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Animazione di transizione per le pagine
+    // Animazione di transizione per le pagine (più veloce)
     navLinks.forEach(link => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
