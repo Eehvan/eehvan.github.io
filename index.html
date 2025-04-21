@@ -1,56 +1,99 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il Mio Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      padding: 3rem 1rem;
+      text-align: center;
+      background: linear-gradient(90deg, #6e00ff, #c300ff);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      font-weight: 300;
+      color: #e0e0e0;
+    }
+    .section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .section h2 {
+      border-left: 5px solid #c300ff;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .project {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mario Rossi</h1>
+    <p>Sviluppatore Frontend | Creatore di cose belle sul Web</p>
+  </header>
 
-export default function HomePage() {
-  useEffect(() => {
-    document.body.style.margin = "0";
-  }, []);
+  <section class="section">
+    <h2>Chi Sono</h2>
+    <p>Ciao! Sono Mario, uno sviluppatore web appassionato di design e tecnologie moderne. Creo siti web interattivi, responsivi e accessibili con HTML, CSS e JavaScript.</p>
+  </section>
 
-  return (
-    <div className="bg-black text-white min-h-screen overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-4">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-6xl font-bold mb-4"
-        >
-          RAMZOID STYLE
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-lg max-w-xl"
-        >
-          Music. Art. Internet.
-        </motion.p>
-      </section>
-
-      {/* Music Embed Section */}
-      <section className="bg-zinc-900 py-12 px-4 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Listen Now</h2>
-        <div className="flex justify-center">
-          <iframe
-            src="https://open.spotify.com/embed/artist/4gHcnYCZ5VYjT6bD6u0QmV"
-            width="300"
-            height="80"
-            frameBorder="0"
-            allow="encrypted-media"
-            className="rounded-md shadow-lg"
-          ></iframe>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black py-8 text-center text-zinc-400">
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
-      </footer>
+  <section class="section">
+    <h2>Progetti</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Portfolio Creativo</h3>
+        <p>Un sito portfolio personale con animazioni leggere e dark mode.</p>
+      </div>
+      <div class="project">
+        <h3>Landing Page per App</h3>
+        <p>Design moderno e mobile-first per una startup tech.</p>
+      </div>
+      <div class="project">
+        <h3>Blog Statico</h3>
+        <p>Blog semplice con supporto per Markdown e codice evidenziato.</p>
+      </div>
     </div>
-  );
-}
+  </section>
 
+  <section class="section">
+    <h2>Contatti</h2>
+    <p>Puoi scrivermi su <a href="mailto:email@email.com" style="color:#c300ff;">email@email.com</a> oppure trovarmi su <a href="#" style="color:#c300ff;">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Mario Rossi. Tutti i diritti riservati.
+  </footer>
 </body>
 </html>
-
