@@ -36,6 +36,7 @@
 
     nav a:hover { color: #fff; }
 
+    /* Header Styles */
     header {
       height: 60vh;
       display: flex;
@@ -50,8 +51,21 @@
       background-repeat: no-repeat;
       position: relative;
       transition: all 0.5s ease;
+      background-attachment: fixed; /* Parallax */
     }
 
+    /* Aggiunta di un effetto parallax */
+    header {
+      animation: parallax 30s infinite linear;
+    }
+
+    @keyframes parallax {
+      0% { background-position: center top; }
+      50% { background-position: center bottom; }
+      100% { background-position: center top; }
+    }
+
+    /* Sfumatura sopra l'immagine */
     header::before {
       content: '';
       position: absolute;
@@ -60,6 +74,11 @@
       height: 100%;
       background-color: rgba(10, 10, 10, 0.7);
       z-index: 1;
+      transition: background-color 0.3s ease;
+    }
+
+    header:hover::before {
+      background-color: rgba(10, 10, 10, 0.9); /* Cambia l'intensità del colore al passaggio del mouse */
     }
 
     header h1, header p {
@@ -87,6 +106,11 @@
     header h1:hover, header p:hover,
     .content h2:hover, .content p:hover {
       text-shadow: 0 0 10px #ab4e52, 0 0 20px #ab4e52, 0 0 30px #ab4e52;
+    }
+
+    /* Effetto di zoom sull'immagine di sfondo quando si passa il mouse */
+    header:hover {
+      background-size: 110%; /* Zoom in */
     }
 
     .content {
