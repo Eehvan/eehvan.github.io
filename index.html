@@ -199,6 +199,12 @@
       border: none;
       border-radius: 10px;
     }
+
+    /* Increased video size */
+    .video-item video {
+      width: 100%;
+      height: 400px; /* Increased video size */
+    }
   </style>
 </head>
 <body>
@@ -234,36 +240,40 @@
     </div>
   </section>
 
-  <section class="video-section active" id="gameaudio">
+  <section class="video-section" id="gameaudio">
     <h2>Game Audio</h2>
 
+    <!-- Common description for the first two videos -->
+    <div class="video-description">
+      I’m currently working on the Music and the Sound Design for a videogame.<br><br>
+      I will update this page once I have more material and implementations to show.<br><br>
+      Meanwhile, enjoy a funny Character voices creation process and the first glimpse
+      of a trailer with my music!
+    </div>
+
+    <!-- First two videos -->
     <div class="video-wrapper">
       <div class="video-item" id="videoContainer4">
-        <video width="100%" id="video4" controls>
+        <video id="video4" controls>
           <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
         </video>
-        <div class="video-description">I’m currently working on the Music and the Sound Design for a videogame.<br><br>
-        I will update this page once I have more material and implementations to show.<br><br>
-        Meanwhile, enjoy a funny Character voices creation process and the first glimpse
-        of a trailer with my music!</div>
       </div>
       <div class="video-item" id="videoContainer5">
-        <video width="100%" id="video5" controls>
+        <video id="video5" controls>
           <source src="My Video.mp4" type="video/mp4">
         </video>
-        <div class="video-description">I’m currently working on the Music and the Sound Design for a videogame.<br><br>
-        I will update this page once I have more material and implementations to show.<br><br>
-        Meanwhile, enjoy a funny Character voices creation process and the first glimpse
-        of a trailer with my music!</div>
       </div>
     </div>
 
+    <!-- Third video with unique description -->
     <div class="video-wrapper">
       <div class="video-item" id="videoContainer6">
-        <video width="100%" id="video6" controls>
+        <video id="video6" controls>
           <source src="inverta.mp4" type="video/mp4">
         </video>
-        <div class="video-description">I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.</div>
+        <div class="video-description">
+          I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.
+        </div>
       </div>
     </div>
   </section>
