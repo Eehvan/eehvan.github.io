@@ -1,175 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ivan Brugolo Portfolio</title>
+  <title>Portfolio Creativo</title>
   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Anonymous Pro', monospace;
       background-color: #fff;
-      color: #000;
-      padding: 0;
+      color: #111;
+      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
-    header {
-      display: flex;
-      justify-content: flex-end;
-      background-color: #fff;
-      padding: 20px;
-      position: sticky;
+    nav {
+      position: fixed;
       top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #ddd;
+      right: 20px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
 
-    header nav a {
-      margin-left: 20px;
-      text-decoration: none;
+    nav a {
       color: #ab4e52;
-      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin: 10px 0;
       transition: color 0.3s;
     }
 
-    header nav a:hover {
-      color: #000;
+    nav a:hover {
+      color: #111;
     }
 
-    section {
-      padding: 60px 20px;
+    header {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ab4e52;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #333;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .content {
+      padding: 40px 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
-    h1, h2 {
+    .content h2 {
+      font-size: 2rem;
       color: #ab4e52;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .content p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .video-section {
+      padding: 40px 20px;
+    }
+
+    .video-section h2 {
+      color: #ab4e52;
+      font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    .video-row {
+    .video-wrapper {
       display: flex;
-      flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 40px;
-      gap: 20px;
     }
 
-    video {
-      width: 45%;
-      max-width: 400px;
-      height: auto;
-      background: #ddd;
+    .video-item {
+      width: 60%;
+      height: 300px;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      border: 2px dashed #ab4e52;
+      margin-right: 20px;
     }
 
-    .video-text {
-      flex: 1;
+    .video-description {
+      width: 40%;
       font-size: 1rem;
-      color: #333;
+      color: #555;
     }
 
-    ul.contact-list {
-      list-style: none;
-      padding: 0;
+    footer {
+      background-color: #f0f0f0;
+      color: #888;
+      padding: 20px;
+      font-size: 0.9rem;
+      text-align: center;
     }
 
-    ul.contact-list li {
-      margin-bottom: 10px;
+    section {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
     }
 
-    ul.contact-list a {
-      color: #ab4e52;
-      text-decoration: none;
+    section.hidden {
+      display: none;
+      opacity: 0;
     }
   </style>
 </head>
 <body>
+
+  <nav>
+    <a href="#aboutme" class="nav-link">About Me</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#demoreel" class="nav-link">Demo Reel</a>
+    <a href="#sounddesign" class="nav-link">Sound Design</a>
+    <a href="#animationprojects" class="nav-link">Animation Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
   <header>
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#skills">Skills</a>
-      <a href="#demo">Demo Reel</a>
-      <a href="#sounddesign">Sound Design</a>
-      <a href="#animation">Animation Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Chi Sono</h1>
+    <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
   </header>
 
-  <section id="about">
-    <h1>Chi Sono</h1>
-    <p>
-      I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.
-      <br><br>
-      Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.
-      <br><br>
-      I studied Music & Sound Design at MOHOLE (MI) and obtained a degree in this field.
-      <br><br>
-      Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out.
-    </p>
+  <section class="content" id="aboutme">
+    <h2>Chi Sono</h2>
+    <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
+    <p>Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.</p>
+    <p>I studied Music & Sound Design at MOHOLE (MI) and obtained a degree in this field.</p>
+    <p>Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out of an image!</p>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Placeholder for skills content.</p>
-  </section>
-
-  <section id="demo">
+  <section class="video-section" id="demoreel">
     <h2>Demo Reel</h2>
-    <div class="video-row">
-      <video controls src="videos/demo.mp4"></video>
-      <div class="video-text">
-        <p>Placeholder text for the Demo Reel video.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="sounddesign">
-    <h2>Sound Design</h2>
-    <div class="video-row">
-      <video controls src="videos/sd1.mp4"></video>
-      <div class="video-text">
-        <p>Placeholder text for Sound Design video 1.</p>
-      </div>
-    </div>
-    <div class="video-row">
-      <video controls src="videos/sd2.mp4"></video>
-      <div class="video-text">
-        <p>Placeholder text for Sound Design video 2.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="animation">
-    <h2>Animation Projects</h2>
-    <div class="video-row">
-      <video controls src="videos/anim1.mp4"></video>
-      <div class="video-text">
-        <p>Placeholder text for Animation Project video 1.</p>
-      </div>
-    </div>
-    <div class="video-row">
-      <video controls src="videos/anim2.mp4"></video>
-      <div class="video-text">
-        <p>Placeholder text for Animation Project video 2.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul class="contact-list">
-      <li><a href="mailto:ivanbrugolo@gmail.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/ivanbrugolo/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://soundcloud.com/hvnhvnn" target="_blank">SoundCloud</a></li>
-      <li><a href="https://www.instagram.com/eeh.van/" target="_blank">Instagram</a></li>
-    </ul>
-  </section>
-</body>
-</html>
+    <div class="video-wrapper">
+      <div class="video-item">Video 1 Placeholder</div>
+      <div class="video-description">Descrizione del video 1. Inserisci qui
