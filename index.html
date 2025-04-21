@@ -80,13 +80,25 @@
       background-color: #1a1a1a;
     }
 
-    .video-section iframe {
+    .video-section h2 {
+      color: #ff0000;
+      margin-bottom: 20px;
+    }
+
+    .video-section .video-placeholder {
       width: 100%;
       max-width: 800px;
       height: 450px;
-      border: none;
+      margin: 20px auto;
+      background-color: #333;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 43, 43, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 2px dashed #ff0000;
     }
 
     footer {
@@ -104,7 +116,7 @@
 <body>
 
   <header>
-    <h1>Il Mio Portfolio</h1>
+    <h1>Chi Sono</h1>
     <p>Creazioni web e design interattivo</p>
   </header>
 
@@ -119,8 +131,18 @@
   <section class="video-section">
     <h2>I miei video</h2>
     <p>Guarda alcuni dei miei video e progetti digitali.</p>
-    <!-- Esempio di video YouTube -->
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video esempio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Placeholder video 1 -->
+    <div class="video-placeholder">
+      Video 1 - Carica il tuo file video
+    </div>
+    <!-- Placeholder video 2 -->
+    <div class="video-placeholder">
+      Video 2 - Carica il tuo file video
+    </div>
+    <!-- Placeholder video 3 -->
+    <div class="video-placeholder">
+      Video 3 - Carica il tuo file video
+    </div>
   </section>
 
   <section class="content">
