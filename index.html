@@ -402,5 +402,46 @@
   <footer>
     <p>&copy; 2025 Creative Portfolio - Created by Me</p>
   </footer>
+
+  
+  <script>
+    const header = document.querySelector('header');
+
+    header.addEventListener('mousemove', (e) => {
+      const { width, height } = header.getBoundingClientRect();
+      const x = e.clientX - width / 2;
+      const y = e.clientY - height / 2;
+      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
+    });
+
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const id = link.getAttribute('href').substring(1);
+        sections.forEach(section => section.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+      });
+    });
+
+    const setupGlow = (videoId, containerId) => {
+      const video = document.getElementById(videoId);
+      const container = document.getElementById(containerId);
+      video.addEventListener('play', () => container.classList.add('glow'));
+      video.addEventListener('pause', () => container.classList.remove('glow'));
+      video.addEventListener('ended', () => container.classList.remove('glow'));
+    };
+
+    setupGlow("video1", "videoContainer1");
+    setupGlow("video2", "videoContainer2");
+    setupGlow("video3", "videoContainer3");
+    setupGlow("video4", "videoContainer4");
+    setupGlow("video5", "videoContainer5");
+    setupGlow("video6", "videoContainer6");
+    setupGlow("video7", "videoContainer7");
+  </script>
+
 </body>
 </html>
