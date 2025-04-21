@@ -158,11 +158,12 @@
       justify-content: center;
       margin-bottom: 40px;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
     .video-item {
       width: 100%;
-      max-width: 800px;
+      max-width: 430px;
       border: 2px dashed #ab4e52;
       padding: 10px;
       transition: box-shadow 0.3s ease;
@@ -177,7 +178,7 @@
       text-align: center;
       font-size: 1rem;
       color: #aaa;
-      margin-bottom: 20px;
+      margin-top: 10px;
     }
 
     footer {
@@ -239,9 +240,9 @@
         <video width="100%" id="video1" controls>
           <source src="Demoreel.mp4" type="video/mp4">
         </video>
+        <div class="video-description">This is a representative video of my main work.</div>
       </div>
     </div>
-    <div class="video-description">This is a representative video of my main work.</div>
   </section>
 
   <section class="content" id="skills">
@@ -254,32 +255,27 @@
 
   <section class="video-section" id="gameaudio">
     <h2>Game Audio</h2>
-
     <div class="video-wrapper">
       <div class="video-item" id="videoContainer4">
         <video width="100%" id="video4" controls>
           <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
         </video>
+        <div class="video-description">Sound design and music for the Whispering Woods trailer.</div>
       </div>
-      <div class="video-description">Sound design and music for the Whispering Woods trailer.</div>
-    </div>
-
-    <div class="video-wrapper">
       <div class="video-item" id="videoContainer5">
         <video width="100%" id="video5" controls>
           <source src="My Video.mp4" type="video/mp4">
         </video>
+        <div class="video-description">Experimental audio techniques and custom sounds.</div>
       </div>
-      <div class="video-description">Experimental audio techniques and custom sounds.</div>
     </div>
-
     <div class="video-wrapper">
       <div class="video-item" id="videoContainer6">
         <video width="100%" id="video6" controls>
           <source src="inverta.mp4" type="video/mp4">
         </video>
+        <div class="video-description">Audio implementation and effects layering for Inverta project.</div>
       </div>
-      <div class="video-description">Audio implementation and effects layering for Inverta project.</div>
     </div>
   </section>
 
@@ -297,24 +293,27 @@
         <video width="100%" id="video2" controls>
           <source src="luffy vs lucci.mp4" type="video/mp4">
         </video>
+        <div class="video-description">Sound redesign for Luffy vs Lucci animation.</div>
       </div>
 
       <div class="video-item" id="videoContainer3">
         <video width="100%" id="video3" controls>
           <source src="law vs kurohige.mp4" type="video/mp4">
         </video>
+        <div class="video-description">Sound redesign for Law vs Kurohige animation.</div>
       </div>
+    </div>
 
-      <!-- Nuovo placeholder video -->
+    <div class="video-wrapper">
       <div class="video-item" id="videoContainer7">
         <video width="100%" id="video7" controls>
-          <source src="placeholder-video.mp4" type="video/mp4">
+          <source src="friendnpalanim.mp4" type="video/mp4">
         </video>
+        <div class="video-description">Sound design and music for animations.</div>
       </div>
     </div>
   </section>
 
-  <!-- Sezione My Music -->
   <section class="content" id="mymusic">
     <h2>My Music</h2>
     <div style="text-align: center;">
@@ -353,7 +352,6 @@
       link.addEventListener('click', e => {
         e.preventDefault();
         const id = link.getAttribute('href').substring(1);
-
         sections.forEach(section => section.classList.remove('active'));
         document.getElementById(id).classList.add('active');
       });
