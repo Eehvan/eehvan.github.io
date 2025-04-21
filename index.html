@@ -51,7 +51,7 @@
       background-repeat: no-repeat;
       position: relative;
       transition: all 0.5s ease;
-      background-attachment: fixed; /* Parallax */
+      background-attachment: fixed; /* Effetto Parallax */
     }
 
     /* Sfumatura sopra l'immagine */
@@ -175,32 +175,37 @@
 
     .video-wrapper {
       display: flex;
-      align-items: center;
+      justify-content: center;
       margin-bottom: 40px;
       flex-wrap: wrap;
     }
 
     .video-item {
-      width: 60%;
-      height: 300px;
+      width: 80%;
+      max-width: 800px;
       background-color: #222;
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: bold;
       border: 2px dashed #ab4e52;
-      margin-right: 20px;
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
     }
 
     .video-item:hover {
       transform: scale(1.05);
     }
 
+    .video-item.playing {
+      border-color: #ab4e52;
+      box-shadow: 0 0 20px #ab4e52, 0 0 40px #ab4e52;
+    }
+
     .video-description {
-      width: 35%;
       font-size: 1rem;
       color: #aaa;
+      margin-top: 20px;
+      text-align: center;
     }
 
     footer {
@@ -240,17 +245,27 @@
         <p>Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.</p>
         <p>I studied Music & Sound Design at MOHOLE (MI) and obtained a degree in this field.</p>
         <p>Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out of an image!</p>
+        <p><a href="https://drive.google.com/file/d/1WGZodX0-DwIqSoJ1EcbxCoJqQIUfsf7z/view?usp=sharing" style="color: #ab4e52;">Check my CV</a></p>
       </div>
       <div class="about-image">
         <!-- Qui aggiungerai la tua immagine -->
         <img src="https://github.com/username/repository/blob/main/your-image.jpg" alt="About Me Image" width="300" height="300">
       </div>
     </div>
-    
-    <!-- Paragrafo con il link al CV -->
-    <p style="text-align: center; margin-top: 20px; color: #bbb;">
-      If you'd like to know more about my professional background, feel free to <a href="https://drive.google.com/file/d/1WGZodX0-DwIqSoJ1EcbxCoJqQIUfsf7z/view?usp=sharing" target="_blank" style="color: #ab4e52;">Check my CV</a>.
-    </p>
+  </section>
+
+  <section class="video-section" id="demoreel">
+    <h2>Demo Reel</h2>
+    <div class="video-wrapper">
+      <div class="video-item" id="demoReelPlayer">
+        <!-- Video Player integrato con il controllo -->
+        <video width="100%" height="auto" id="videoDemoReel" controls>
+          <source src="Demoreel.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="video-description">This is a representative video of my main work.</div>
   </section>
 
   <section class="content" id="skills">
@@ -259,14 +274,6 @@
     <p>- Music composition</p>
     <p>- Experience with audio software like Ableton, Reaper, Pro Tools</p>
     <p>- Audio editing and mixing</p>
-  </section>
-
-  <section class="video-section" id="demoreel">
-    <h2>Demo Reel</h2>
-    <div class="video-wrapper">
-      <div class="video-item">Demo Reel Video</div>
-      <div class="video-description">This is a representative video of my main work.</div>
-    </div>
   </section>
 
   <section class="video-section" id="sounddesign">
@@ -308,17 +315,7 @@
   </footer>
 
   <script>
-    // Effetto di movimento dell'immagine sul mouse (inverso)
-    const header = document.querySelector('header');
-
-    header.addEventListener('mousemove', (e) => {
-      const { width, height } = header.getBoundingClientRect();
-      const x = e.clientX - width / 2;
-      const y = e.clientY - height / 2;
-      // Movimento inverso: l'immagine si sposterà in direzione opposta al movimento del mouse
-      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
-    });
-
+    // Funzione per attivare la visibilità delle sezioni
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
@@ -334,6 +331,22 @@
         const target = document.getElementById(id);
         target.classList.add('active');
       });
+    });
+
+    // Aggiungere l'effetto di illuminazione sui bordi del video
+    const video = document.getElementById("videoDemoReel");
+    const videoItem = document.getElementById("demoReelPlayer");
+
+    video.addEventListener("play", () => {
+      videoItem.classList.add("playing");
+    });
+
+    video.addEventListener("pause", () => {
+      videoItem.classList.remove("playing");
+    });
+
+    video.addEventListener("ended", () => {
+      videoItem.classList.remove("playing");
     });
   </script>
 </body>
