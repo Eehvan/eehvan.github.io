@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -179,9 +179,43 @@
 
     section { display: none; }
     section.active { display: block; }
+
+    /* Transizione Pixelata */
+    .pixelated-transition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: none;
+      background-image: url('pixel.png'); /* Aggiungi un'immagine pixelata per l'effetto */
+      background-size: 100px 100px;
+    }
+
+    /* Pixelato effetto di transizione */
+    .pixelated-transition.active {
+      display: block;
+      animation: pixelFadeOut 1s forwards;
+    }
+
+    @keyframes pixelFadeOut {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(10);
+      }
+    }
+
   </style>
 </head>
 <body>
+
+  <div class="pixelated-transition" id="pixelTransition"></div>
 
   <nav>
     <a href="#aboutme" class="nav-link">About Me</a>
@@ -210,55 +244,7 @@
     </div>
   </section>
 
-  <section class="content" id="skills">
-    <h2>Skills</h2>
-    <p>- Sound Design for video games and animations</p>
-    <p>- Music composition</p>
-    <p>- Experience with audio software like Ableton, Reaper, Pro Tools</p>
-    <p>- Audio editing and mixing</p>
-  </section>
-
-  <section class="video-section" id="demoreel">
-    <h2>Demo Reel</h2>
-    <div class="video-wrapper">
-      <div class="video-item">Demo Reel Video</div>
-      <div class="video-description">This is a representative video of my main work.</div>
-    </div>
-  </section>
-
-  <section class="video-section" id="sounddesign">
-    <h2>Sound Design</h2>
-    <div class="video-wrapper">
-      <div class="video-item">Sound Design 1</div>
-      <div class="video-description">Sound and music for an indie horror game.</div>
-    </div>
-    <div class="video-wrapper">
-      <div class="video-item">Sound Design 2</div>
-      <div class="video-description">Sound design for animated cutscenes.</div>
-    </div>
-  </section>
-
-  <section class="video-section" id="animationprojects">
-    <h2>Animation Projects</h2>
-    <div class="video-wrapper">
-      <div class="video-item">Animation 1</div>
-      <div class="video-description">Collaborative project with digital animators.</div>
-    </div>
-    <div class="video-wrapper">
-      <div class="video-item">Animation 2</div>
-      <div class="video-description">Experimental musical animation with interactive audio.</div>
-    </div>
-  </section>
-
-  <section class="content" id="contact">
-    <h2>Contact</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> |
-      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> |
-      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> |
-      <a href="mailto:ivanbrugolo@gmail.com" style="color: #ab4e52;">Email</a>
-    </p>
-  </section>
+  <!-- Aggiungi altre sezioni qui -->
 
   <footer>
     &copy; 2025 Creative Portfolio - Created by Me
@@ -267,20 +253,29 @@
   <script>
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
+    const pixelTransition = document.getElementById('pixelTransition');
 
     links.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
-        const id = link.getAttribute('href').substring(1);
 
-        sections.forEach(section => {
-          section.classList.remove('active');
-        });
+        // Aggiungi l'effetto pixelato
+        pixelTransition.classList.add('active');
+        setTimeout(() => {
+          // Rimuovi l'effetto pixelato dopo che la transizione è finita
+          pixelTransition.classList.remove('active');
 
-        const target = document.getElementById(id);
-        target.classList.add('active');
+          // Aggiungi la sezione corretta
+          const id = link.getAttribute('href').substring(1);
+          sections.forEach(section => {
+            section.classList.remove('active');
+          });
+          const target = document.getElementById(id);
+          target.classList.add('active');
+        }, 1000); // Aspetta che l'animazione pixelata finisca (1 secondo)
       });
     });
   </script>
+
 </body>
 </html>
