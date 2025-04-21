@@ -405,35 +405,52 @@
   </script>
   
 
-  <section class="click-sound-section">
+<!-- Sezione per effetti sonori dei clic -->
+<section class="click-sound-section">
   <h2>Interactive Sound Effects</h2>
-  <p>Click anywhere on this page to hear a sound effect!</p>
+  <p>Click anywhere on this page to hear a random sound effect!</p>
 </section>
 
 <a href="#" class="clickable-link">Click Me</a>
 
-<!-- Aggiungi l'audio del suono del click -->
-<audio id="click-sound" src="click-sound.mp3" preload="auto"></audio>
+<!-- Aggiungi gli audio dei suoni del click -->
+<audio id="click-sound-1" src="click-sound-1.mp3" preload="auto"></audio>
+<audio id="click-sound-2" src="click-sound-2.mp3" preload="auto"></audio>
+<audio id="click-sound-3" src="click-sound-3.mp3" preload="auto"></audio>
 
 <script>
-  // Seleziona l'elemento audio
-  const clickSound = document.getElementById('click-sound');
+  // Seleziona tutti gli elementi audio
+  const clickSounds = [
+    document.getElementById('click-sound-1'),
+    document.getElementById('click-sound-2'),
+    document.getElementById('click-sound-3')
+  ];
 
-  // Funzione per riprodurre il suono al click
-  const playClickSound = () => {
-    clickSound.play();
+  // Imposta il volume per tutti i suoni
+  clickSounds.forEach(sound => {
+    sound.volume = 0.3;  // Regola il volume a tua preferenza
+  });
+
+  // Funzione per selezionare e riprodurre un suono random
+  const playRandomClickSound = () => {
+    // Seleziona un indice casuale
+    const randomIndex = Math.floor(Math.random() * clickSounds.length);
+    
+    // Riproduce il suono casuale
+    clickSounds[randomIndex].play();
   };
 
   // Aggiungi l'evento 'click' a tutti gli elementi che vuoi riproducano il suono
   document.querySelectorAll('a, button').forEach(element => {
-    element.addEventListener('click', playClickSound);
+    element.addEventListener('click', playRandomClickSound);
   });
 
   // Opzionale: Aggiungi l'effetto anche sui link di navigazione
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', playClickSound);
+    link.addEventListener('click', playRandomClickSound);
   });
 </script>
+
 
   
 </body>
