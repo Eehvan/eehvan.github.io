@@ -238,41 +238,6 @@ body.loaded .video-item {
 
 
     
-
-
-/* Nascondi il cursore di default */
-body {
-  cursor: none; /* Nascondi il cursore di default */
-}
-
-/* Crea il cursore pixelato */
-.cursor-shadow {
-  position: absolute;
-  width: 20px; /* Puoi modificare questa dimensione */
-  height: 20px; /* Puoi modificare questa dimensione */
-  background-color: rgba(0, 0, 0, 0.7); /* Ombra nera */
-  border-radius: 50%; /* Forma arrotondata */
-  pointer-events: none; /* Non interferisce con gli altri eventi del mouse */
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5),  /* Ombra principale */
-              1px 1px 2px rgba(0, 0, 0, 0.5), /* Effetto pixelato */
-              2px 2px 1px rgba(0, 0, 0, 0.4); /* Effetto pixelato */
-  transform: translate(-50%, -50%); /* Posizionamento del cursore */
-  transition: box-shadow 0.1s ease; /* Aggiungi transizione fluida per l'ombra */
-  opacity: 0; /* Inizialmente invisibile */
-}
-
-/* Quando il cursore passa sopra l'header, il cursore pixelato appare */
-header:hover .cursor-shadow {
-  opacity: 1;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8), 
-              1px 1px 4px rgba(0, 0, 0, 0.8),
-              2px 2px 2px rgba(0, 0, 0, 0.7); /* Ombra più marcata e pixelata */
-}
-
-
-
-
-
     
     
   </style>
@@ -526,21 +491,6 @@ header:hover .cursor-shadow {
   </script>
   
 
-
-  <script>
-    // Crea un elemento di ombra sotto il cursore
-    const cursorShadow = document.createElement('div');
-    cursorShadow.classList.add('cursor-shadow');
-    document.body.appendChild(cursorShadow);
-
-    // Aggiungi un event listener per tracciare la posizione del cursore
-    document.addEventListener('mousemove', (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      cursorShadow.style.left = `${x}px`;  // Posizione X del cursore
-      cursorShadow.style.top = `${y}px`;   // Posizione Y del cursore
-    });
-  </script>
 
   
 </body>
