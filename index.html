@@ -1,294 +1,163 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Creativo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import "./App.css";
 
-    body {
-      font-family: 'Anonymous Pro', monospace;
-      background-color: #0a0a0a;
-      color: white;
-      overflow-x: hidden;
-      text-align: center;
-      height: 100vh;
-      scroll-behavior: smooth; /* Transizione fluida tra le sezioni */
-    }
+const pageTransition = {
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.2 } }
+};
 
-    /* Header and navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      right: 20px;
-      z-index: 100;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-
-    nav a {
-      color: #ab4e52; /* Colore rosso personalizzato */
-      text-decoration: none;
-      font-size: 1.1rem;
-      margin: 10px 0;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    header {
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #1e1e1e;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: #ab4e52; /* Colore rosso personalizzato */
-      letter-spacing: 3px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #ccc;
-      animation: fadeIn 1s ease-in-out 0.5s;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .content {
-      padding: 40px 20px;
-      text-align: left;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .content h2 {
-      font-size: 2.5rem;
-      color: #ab4e52; /* Colore rosso personalizzato */
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-
-    .content p {
-      font-size: 1.1rem;
-      color: #bbb;
-      max-width: 700px;
-      margin: 20px auto;
-    }
-
-    .video-section {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 50px 20px;
-      background-color: #1a1a1a;
-    }
-
-    .video-item {
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      margin: 20px 0;
-      background-color: #333;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border: 2px dashed #ab4e52; /* Colore rosso personalizzato */
-    }
-
-    .video-item + .video-item {
-      margin-top: 40px; /* Aggiunto spazio tra i video */
-    }
-
-    .video-description {
-      margin-left: 20px;
-      max-width: 400px;
-      color: #bbb;
-      font-size: 1.1rem;
-      display: inline-block;
-      vertical-align: top;
-      height: 450px;
-      line-height: 450px; /* Centra il testo verticalmente */
-      text-align: left;
-    }
-
-    footer {
-      background-color: #111;
-      color: #888;
-      padding: 20px;
-      font-size: 0.9rem;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Animazione di transizione per il menu */
-    section {
-      transition: opacity 0.5s ease-in-out;
-    }
-    section.hidden {
-      opacity: 0;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header e barra di navigazione -->
-  <nav>
-    <a href="#aboutme" class="nav-link">About Me</a>
-    <a href="#skills" class="nav-link">Skills</a>
-    <a href="#demoreel" class="nav-link">Demo Reel</a>
-    <a href="#sounddesign" class="nav-link">Sound Design</a>
-    <a href="#animationprojects" class="nav-link">Animation Projects</a>
-    <a href="#contact" class="nav-link">Contact</a>
-  </nav>
-
-  <header>
-    <h1>Chi Sono</h1>
-    <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
-  </header>
-
-  <!-- Sezione Chi Sono -->
-  <section class="content" id="aboutme">
+const Home = () => (
+  <motion.div className="section" {...pageTransition}>
     <h2>Chi Sono</h2>
-    <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
-    <p>Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.</p>
-    <p>I studied Music & Sound Design at MOHOLE (MI) and obtained a degree in this field.</p>
-    <p>Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out of an image!</p>
-  </section>
-
-  <!-- Sezione Video -->
-  <section class="video-section" id="demoreel">
-    <h2>I miei video</h2>
-    <p>Guarda alcuni dei miei video e progetti digitali.</p>
-    <div>
-      <div class="video-item">
-        Video 1 - Carica il tuo file video
-      </div>
-      <div class="video-description">
-        Video 1 - Questo è un placeholder per il video che caricherai. Puoi descrivere brevemente il contenuto del video qui.
-      </div>
-    </div>
-    <div>
-      <div class="video-item">
-        Video 2 - Carica il tuo file video
-      </div>
-      <div class="video-description">
-        Video 2 - Descrizione del secondo video. Questo è il contenuto che hai creato per il secondo video, puoi metterci delle informazioni sul progetto.
-      </div>
-    </div>
-    <div>
-      <div class="video-item">
-        Video 3 - Carica il tuo file video
-      </div>
-      <div class="video-description">
-        Video 3 - Un altro placeholder. Descrizione del progetto o del video che hai creato.
-      </div>
-    </div>
-  </section>
-
-  <!-- Sezione Sound Design -->
-  <section class="video-section" id="sounddesign">
-    <h2>Sound Design</h2>
-    <div>
-      <div class="video-item">
-        Sound Design Video 1 - Carica il tuo file
-      </div>
-      <div class="video-description">
-        Sound Design Video 1 - Descrizione del progetto 1 di sound design.
-      </div>
-    </div>
-    <div>
-      <div class="video-item">
-        Sound Design Video 2 - Carica il tuo file
-      </div>
-      <div class="video-description">
-        Sound Design Video 2 - Descrizione del progetto 2 di sound design.
-      </div>
-    </div>
-  </section>
-
-  <!-- Sezione Animation Projects -->
-  <section class="video-section" id="animationprojects">
-    <h2>Animation Projects</h2>
-    <div>
-      <div class="video-item">
-        Animation Video 1 - Carica il tuo file
-      </div>
-      <div class="video-description">
-        Animation Video 1 - Descrizione del progetto di animazione 1.
-      </div>
-    </div>
-    <div>
-      <div class="video-item">
-        Animation Video 2 - Carica il tuo file
-      </div>
-      <div class="video-description">
-        Animation Video 2 - Descrizione del progetto di animazione 2.
-      </div>
-    </div>
-  </section>
-
-  <!-- Sezione Contatti -->
-  <section class="content" id="contact">
-    <h2>Contact</h2>
     <p>
-      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> | 
-      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> | 
-      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> | 
-      <a href="mailto:ivanbrugolo@gmail.com" style="color: #ab4e52;">Email</a>
+      I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.
+      <br /><br />
+      Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.
+      <br /><br />
+      I studied Music & Sound Design at MOHOLE (MI) and obtained a degree in this field.
+      <br /><br />
+      Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out.
     </p>
-  </section>
+  </motion.div>
+);
 
-  <footer>
-    &copy; 2025 Portfolio Creativo - Creato da Me
-  </footer>
+const VideoSection = ({ videos }) => (
+  <motion.div className="section" {...pageTransition}>
+    <div className="video-container">
+      {videos.map((src, idx) => (
+        <div className="video-block" key={idx}>
+          <video controls src={src} className="video" />
+          <div className="video-text">
+            <p>Placeholder text for video {idx + 1}. This is a short description related to the video content.</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </motion.div>
+);
 
-  <script>
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
+const Skills = () => (
+  <motion.div className="section" {...pageTransition}>
+    <h2>Skills</h2>
+    <p>Placeholder for skills content.</p>
+  </motion.div>
+);
 
-    // Animazione di transizione per le pagine (più veloce)
-    navLinks.forEach(link => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetId = link.getAttribute('href').slice(1);
-        sections.forEach(section => {
-          section.classList.add('hidden');
-        });
-        document.getElementById(targetId).classList.remove('hidden');
-      });
-    });
-  </script>
-</body>
-</html>
+const DemoReel = () => <VideoSection videos={["/videos/demo.mp4"]} />;
+const SoundDesign = () => <VideoSection videos={["/videos/sd1.mp4", "/videos/sd2.mp4"]} />;
+const AnimationProjects = () => <VideoSection videos={["/videos/anim1.mp4", "/videos/anim2.mp4"]} />;
+
+const Contact = () => (
+  <motion.div className="section" {...pageTransition}>
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="mailto:ivanbrugolo@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/ivanbrugolo/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+      <li><a href="https://soundcloud.com/hvnhvnn" target="_blank" rel="noreferrer">SoundCloud</a></li>
+      <li><a href="https://www.instagram.com/eeh.van/" target="_blank" rel="noreferrer">Instagram</a></li>
+    </ul>
+  </motion.div>
+);
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <nav className="navbar">
+          <ul>
+            <li><Link to="/">About Me</Link></li>
+            <li><Link to="/skills">Skills</Link></li>
+            <li><Link to="/demo">Demo Reel</Link></li>
+            <li><Link to="/sounddesign">Sound Design</Link></li>
+            <li><Link to="/animation">Animation Projects</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+        <main>
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/demo" element={<DemoReel />} />
+              <Route path="/sounddesign" element={<SoundDesign />} />
+              <Route path="/animation" element={<AnimationProjects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
+        </main>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Anonymous Pro', monospace;
+  background-color: #fff;
+  color: #333;
+}
+
+.App {
+  text-align: left;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ab4e52;
+  font-weight: bold;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.video-block {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.video {
+  width: 300px;
+  height: auto;
+}
+
+.video-text {
+  max-width: 600px;
+  color: #333;
+}
+
+h2 {
+  color: #ab4e52;
+}
