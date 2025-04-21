@@ -162,8 +162,8 @@
     }
 
     .video-item {
-      width: 100%;
-      max-width: 430px;
+      width: 90%;
+      max-width: 1000px;
       border: 2px dashed #ab4e52;
       padding: 10px;
       transition: box-shadow 0.3s ease;
@@ -233,12 +233,11 @@
     </div>
   </section>
 
-  <!-- Ripristino della sezione Demo Reel -->
-  <section class="video-section" id="demoreel">
+  <section class="video-section active" id="demoreel">
     <h2>Demo Reel</h2>
     <div class="video-wrapper">
       <div class="video-item" id="videoContainer1">
-        <video width="100%" id="video1" controls>
+        <video width="100%" height="auto" id="video1" controls>
           <source src="Demoreel.mp4" type="video/mp4">
         </video>
         <div class="video-description">This is a representative video of my main work.</div>
@@ -246,8 +245,7 @@
     </div>
   </section>
 
-  <!-- Ripristino della sezione Skills -->
-  <section class="content" id="skills">
+  <section class="content active" id="skills">
     <h2>Skills</h2>
     <p>- Sound Design for video games and animations</p>
     <p>- Music composition</p>
@@ -255,7 +253,6 @@
     <p>- Audio editing and mixing</p>
   </section>
 
-  <!-- Ripristino della sezione Game Audio -->
   <section class="video-section" id="gameaudio">
     <h2>Game Audio</h2>
     <div class="video-wrapper">
@@ -282,7 +279,6 @@
     </div>
   </section>
 
-  <!-- Ripristino della sezione Animation Projects -->
   <section class="video-section" id="animationprojects">
     <h2>Animation Projects</h2>
     <div style="text-align: center; margin-bottom: 30px;">
@@ -318,7 +314,6 @@
     </div>
   </section>
 
-  <!-- Ripristino della sezione My Music -->
   <section class="content" id="mymusic">
     <h2>My Music</h2>
     <div style="text-align: center;">
@@ -326,20 +321,22 @@
     </div>
   </section>
 
-  <!-- Sezione Contatti (già corretta) -->
   <section class="content" id="contact">
     <h2>Contact</h2>
-    <form action="https://formspree.io/f/mnqzrqbo" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" required></textarea>
-      
-      <button type="submit">Send Message</button>
+    <p>
+      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> |
+      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> |
+      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> |
+      <a href="mailto:ivanbrugolo@gmail.com" style="color: #ab4e52;">Email</a>
+    </p>
+    <form action="https://formspree.io/f/movdawdk" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required><br>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required><br>
+      <label for="message">Message:</label><br>
+      <textarea name="message" id="message" rows="5" required></textarea><br>
+      <input type="submit" value="Send Message">
     </form>
   </section>
 
