@@ -382,7 +382,10 @@ nav {
   transition: transform 0.5s ease-in-out; /* Aggiungi una transizione fluida */
 }
 
-
+/* Applicare il movimento 3D quando il mouse passa sopra l'header */
+.header:hover {
+  transform: rotateY(15deg) rotateX(15deg); /* Effetto di rotazione su entrambi gli assi */
+}
 
     
     
@@ -408,10 +411,10 @@ nav {
 </nav>
 
 
- <header class="header">
-  <h1>MY PORTFOLIO</h1>
-  <p>Take a peek at my ideas</p>
-</header>
+  <header>
+    <h1>MY PORTFOLIO</h1>
+    <p>Take a peek at my ideas</p>
+  </header>
 
 <section class="content active" id="aboutme" style="background-color: transparent; padding: 40px 20px;">
   <h2>About Me</h2>
@@ -620,7 +623,7 @@ nav {
       const { width, height } = header.getBoundingClientRect();
       const x = e.clientX - width / 2;
       const y = e.clientY - height / 2;
-      header.style.backgroundPosition = ${50 - x / width * 10}% ${50 - y / height * 10}%;
+      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
     });
 
     const links = document.querySelectorAll('.nav-link');
