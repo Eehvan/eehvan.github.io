@@ -36,7 +36,6 @@
 
     nav a:hover { color: #fff; }
 
-    /* Header Styles */
     header {
       height: 60vh;
       display: flex;
@@ -45,29 +44,22 @@
       align-items: center;
       text-align: center;
       background-color: #1e1e1e;
-      background-image: url('Progetto senza titolo.png'); /* Sostituisci con il percorso della tua immagine */
+      background-image: url('Progetto senza titolo.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       position: relative;
-      transition: all 0.5s ease;
-      background-attachment: fixed; /* Effetto Parallax */
+      background-attachment: fixed;
     }
 
-    /* Sfumatura sopra l'immagine */
     header::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(10, 10, 10, 0.2); /* Ridotto l'oscuramento */
+      background-color: rgba(10, 10, 10, 0.2);
       z-index: 1;
-      transition: background-color 0.3s ease;
-    }
-
-    header:hover::before {
-      background-color: rgba(10, 10, 10, 0.4); /* Cambiato l'intensità del colore al passaggio del mouse */
     }
 
     header h1, header p {
@@ -91,7 +83,6 @@
       margin: 0 auto;
     }
 
-    /* Aggiungi l'effetto di illuminazione al testo */
     header h1:hover, header p:hover,
     .content h2:hover, .content p:hover {
       text-shadow: 0 0 10px #ab4e52, 0 0 20px #ab4e52, 0 0 30px #ab4e52;
@@ -116,14 +107,6 @@
       color: #ab4e52;
       margin-bottom: 20px;
       text-align: left;
-      opacity: 0;
-      transform: translateX(-100px);
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-
-    .content.active h2 {
-      opacity: 1;
-      transform: translateX(0);
     }
 
     .about-container {
@@ -175,37 +158,28 @@
 
     .video-wrapper {
       display: flex;
-      justify-content: center;
+      align-items: flex-start;
       margin-bottom: 40px;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
     .video-item {
-      width: 80%;
-      max-width: 800px;
-      background-color: #222;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
+      width: 60%;
+      max-width: 600px;
       border: 2px dashed #ab4e52;
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-    }
-
-    .video-item:hover {
-      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
     }
 
     .video-item.playing {
-      border-color: #ab4e52;
-      box-shadow: 0 0 20px #ab4e52, 0 0 40px #ab4e52;
+      border: 2px solid #fff;
+      box-shadow: 0 0 20px #ab4e52;
     }
 
     .video-description {
+      width: 35%;
       font-size: 1rem;
       color: #aaa;
-      margin-top: 20px;
-      text-align: center;
     }
 
     footer {
@@ -218,7 +192,6 @@
 
     section { display: none; }
     section.active { display: block; }
-
   </style>
 </head>
 <body>
@@ -248,7 +221,6 @@
         <p><a href="https://drive.google.com/file/d/1WGZodX0-DwIqSoJ1EcbxCoJqQIUfsf7z/view?usp=sharing" style="color: #ab4e52;">Check my CV</a></p>
       </div>
       <div class="about-image">
-        <!-- Qui aggiungerai la tua immagine -->
         <img src="https://github.com/username/repository/blob/main/your-image.jpg" alt="About Me Image" width="300" height="300">
       </div>
     </div>
@@ -258,14 +230,13 @@
     <h2>Demo Reel</h2>
     <div class="video-wrapper">
       <div class="video-item" id="demoReelPlayer">
-        <!-- Video Player integrato con il controllo -->
         <video width="100%" height="auto" id="videoDemoReel" controls>
           <source src="Demoreel.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
+      <div class="video-description">This is a representative video of my main work.</div>
     </div>
-    <div class="video-description">This is a representative video of my main work.</div>
   </section>
 
   <section class="content" id="skills">
@@ -291,11 +262,21 @@
   <section class="video-section" id="animationprojects">
     <h2>Animation Projects</h2>
     <div class="video-wrapper">
-      <div class="video-item">luffy vs lucci.mp4</div>
+      <div class="video-item" id="animationPlayer1">
+        <video width="100%" height="auto" id="videoAnimation1" controls>
+          <source src="luffy vs lucci.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div class="video-description">Collaborative project with digital animators.</div>
     </div>
     <div class="video-wrapper">
-      <div class="video-item">law vs kurohige.mp4</div>
+      <div class="video-item" id="animationPlayer2">
+        <video width="100%" height="auto" id="videoAnimation2" controls>
+          <source src="law vs kurohige.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div class="video-description">Experimental musical animation with interactive audio.</div>
     </div>
   </section>
@@ -315,7 +296,15 @@
   </footer>
 
   <script>
-    // Funzione per attivare la visibilità delle sezioni
+    const header = document.querySelector('header');
+
+    header.addEventListener('mousemove', (e) => {
+      const { width, height } = header.getBoundingClientRect();
+      const x = e.clientX - width / 2;
+      const y = e.clientY - height / 2;
+      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
+    });
+
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
@@ -324,29 +313,27 @@
         e.preventDefault();
         const id = link.getAttribute('href').substring(1);
 
-        sections.forEach(section => {
-          section.classList.remove('active');
-        });
-
+        sections.forEach(section => section.classList.remove('active'));
         const target = document.getElementById(id);
         target.classList.add('active');
       });
     });
 
-    // Aggiungere l'effetto di illuminazione sui bordi del video
-    const video = document.getElementById("videoDemoReel");
-    const videoItem = document.getElementById("demoReelPlayer");
+    const players = [
+      { videoId: "videoDemoReel", boxId: "demoReelPlayer" },
+      { videoId: "videoAnimation1", boxId: "animationPlayer1" },
+      { videoId: "videoAnimation2", boxId: "animationPlayer2" }
+    ];
 
-    video.addEventListener("play", () => {
-      videoItem.classList.add("playing");
-    });
+    players.forEach(player => {
+      const video = document.getElementById(player.videoId);
+      const box = document.getElementById(player.boxId);
 
-    video.addEventListener("pause", () => {
-      videoItem.classList.remove("playing");
-    });
-
-    video.addEventListener("ended", () => {
-      videoItem.classList.remove("playing");
+      if (video && box) {
+        video.addEventListener("play", () => box.classList.add("playing"));
+        video.addEventListener("pause", () => box.classList.remove("playing"));
+        video.addEventListener("ended", () => box.classList.remove("playing"));
+      }
     });
   </script>
 </body>
