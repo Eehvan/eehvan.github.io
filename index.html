@@ -21,6 +21,29 @@
       height: 100vh;
     }
 
+    /* Header and navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      right: 20px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    nav a {
+      color: #ff0000;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin: 10px 0;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
     header {
       height: 60vh;
       display: flex;
@@ -58,7 +81,9 @@
 
     .content {
       padding: 40px 20px;
-      text-align: center;
+      text-align: left;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .content h2 {
@@ -76,20 +101,18 @@
     }
 
     .video-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       padding: 50px 20px;
       background-color: #1a1a1a;
     }
 
-    .video-section h2 {
-      color: #ff0000;
-      margin-bottom: 20px;
-    }
-
-    .video-section .video-placeholder {
+    .video-item {
       width: 100%;
       max-width: 800px;
       height: 450px;
-      margin: 20px auto;
+      margin: 20px 0;
       background-color: #333;
       border-radius: 10px;
       display: flex;
@@ -99,6 +122,10 @@
       font-size: 1.2rem;
       font-weight: bold;
       border: 2px dashed #ff0000;
+    }
+
+    .video-item + .video-item {
+      margin-top: 40px; /* Aggiunto spazio tra i video */
     }
 
     footer {
@@ -115,12 +142,23 @@
 </head>
 <body>
 
+  <!-- Header e barra di navigazione -->
+  <nav>
+    <a href="#aboutme">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#demoreel">Demo Reel</a>
+    <a href="#sounddesign">Sound Design</a>
+    <a href="#animationprojects">Animation Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
     <h1>Chi Sono</h1>
     <p>Creazioni web e design interattivo</p>
   </header>
 
-  <section class="content">
+  <!-- Sezione Chi Sono -->
+  <section class="content" id="aboutme">
     <h2>Chi Sono</h2>
     <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
     <p>Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.</p>
@@ -128,26 +166,51 @@
     <p>Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out of an image!</p>
   </section>
 
-  <section class="video-section">
+  <!-- Sezione Video -->
+  <section class="video-section" id="demoreel">
     <h2>I miei video</h2>
     <p>Guarda alcuni dei miei video e progetti digitali.</p>
-    <!-- Placeholder video 1 -->
-    <div class="video-placeholder">
+    <!-- Video Placeholder 1 -->
+    <div class="video-item">
       Video 1 - Carica il tuo file video
     </div>
-    <!-- Placeholder video 2 -->
-    <div class="video-placeholder">
+    <!-- Video Placeholder 2 -->
+    <div class="video-item">
       Video 2 - Carica il tuo file video
     </div>
-    <!-- Placeholder video 3 -->
-    <div class="video-placeholder">
+    <!-- Video Placeholder 3 -->
+    <div class="video-item">
       Video 3 - Carica il tuo file video
     </div>
   </section>
 
-  <section class="content">
-    <h2>Progetti Recenti</h2>
-    <p>Ho lavorato su diversi progetti che uniscono funzionalità, design e innovazione. Ogni progetto ha una storia e una sfida unica che ho affrontato con passione.</p>
+  <!-- Sezione Sound Design -->
+  <section class="video-section" id="sounddesign">
+    <h2>Sound Design</h2>
+    <div class="video-item">
+      Sound Design Video 1 - Carica il tuo file
+    </div>
+    <div class="video-item">
+      Sound Design Video 2 - Carica il tuo file
+    </div>
+  </section>
+
+  <!-- Sezione Animation Projects -->
+  <section class="video-section" id="animationprojects">
+    <h2>Animation Projects</h2>
+    <div class="video-item">
+      Animation Video 1 - Carica il tuo file
+    </div>
+    <div class="video-item">
+      Animation Video 2 - Carica il tuo file
+    </div>
+  </section>
+
+  <!-- Sezione Contatti -->
+  <section class="content" id="contact">
+    <h2>Contact</h2>
+    <p>SoundCloud | LinkedIn | Instagram | Email</p>
+    <p>Puoi trovare tutti i miei contatti e le mie informazioni social qui.</p>
   </section>
 
   <footer>
