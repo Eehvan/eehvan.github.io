@@ -163,11 +163,10 @@
 
     .video-item {
       width: 100%;
-      max-width: 45%;
+      max-width: 430px;
       border: 2px dashed #ab4e52;
       padding: 10px;
       transition: box-shadow 0.3s ease;
-      margin-bottom: 20px;
     }
 
     .video-item.glow {
@@ -200,21 +199,17 @@
       border-radius: 10px;
     }
 
-    /* Increased video size */
-    .video-item video {
+    /* Aggiunti gli stili per ingrandire i video */
+    .video-item iframe, .video-item video {
       width: 100%;
-      height: 400px; /* Increased video size */
+      height: 100%;
     }
 
-    /* Added more space between text and videos in Game Audio section */
-    .video-section .video-description {
-      margin-bottom: 40px; /* More space between text and video */
+    /* Spazio tra testo e video */
+    .video-wrapper {
+      margin-bottom: 60px;
     }
 
-    /* Increased size of 'inverta.mp4' */
-    #video6 {
-      height: 500px; /* Increased height */
-    }
   </style>
 </head>
 <body>
@@ -250,88 +245,138 @@
     </div>
   </section>
 
-  <section class="video-section" id="gameaudio">
-    <h2>Game Audio</h2>
-
-    <!-- Common description for the first two videos -->
-    <div class="video-description">
-      I’m currently working on the Music and the Sound Design for a videogame.<br><br>
-      I will update this page once I have more material and implementations to show.<br><br>
-      Meanwhile, enjoy a funny Character voices creation process and the first glimpse
-      of a trailer with my music!
-    </div>
-
-    <!-- First two videos -->
+  <section class="video-section" id="demoreel">
+    <h2>Demo Reel</h2>
     <div class="video-wrapper">
-      <div class="video-item" id="videoContainer4">
-        <video id="video4" controls>
-          <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
+      <div class="video-item" id="videoContainer1">
+        <video width="100%" id="video1" controls>
+          <source src="Demoreel.mp4" type="video/mp4">
         </video>
-      </div>
-      <div class="video-item" id="videoContainer5">
-        <video id="video5" controls>
-          <source src="My Video.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-
-    <!-- Third video with unique description -->
-    <div class="video-wrapper">
-      <div class="video-item" id="videoContainer6">
-        <video id="video6" controls>
-          <source src="inverta.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">
-          I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.
-        </div>
+        <div class="video-description">This is a representative video of my main work.</div>
       </div>
     </div>
   </section>
 
-  <!-- Other sections like Skills, Demo Reel, Animation Projects, My Music, and Contact go here -->
+  <section class="content" id="skills">
+    <h2>Skills</h2>
+    <p>- Sound Design for video games and animations</p>
+    <p>- Music composition</p>
+    <p>- Experience with audio software like Ableton, Reaper, Pro Tools</p>
+    <p>- Audio editing and mixing</p>
+  </section>
+
+  <section class="video-section" id="gameaudio">
+    <h2>Game Audio</h2>
+    <div class="video-wrapper">
+      <p style="font-size: 1.1rem; color: #ccc; text-align: center;">
+        I’m currently working on the Music and the Sound Design for a videogame.<br>
+        I will update this page once I have more material and implementations to show.<br><br>
+        Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!
+      </p>
+      <div class="video-item" id="videoContainer4">
+        <video width="100%" id="video4" controls>
+          <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound design and music for the Whispering Woods trailer.</div>
+      </div>
+      <div class="video-item" id="videoContainer5">
+        <video width="100%" id="video5" controls>
+          <source src="My Video.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Experimental audio techniques and custom sounds.</div>
+      </div>
+    </div>
+
+    <div class="video-wrapper">
+      <p style="font-size: 1.1rem; color: #ccc; text-align: center;">
+        I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.
+      </p>
+      <div class="video-item" id="videoContainer6">
+        <video width="100%" id="video6" controls>
+          <source src="inverta.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Audio implementation and effects layering for Inverta project.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" id="animationprojects">
+    <h2>Animation Projects</h2>
+    <div style="text-align: center; margin-bottom: 30px;">
+      <p style="font-size: 1.1rem; color: #ccc;">
+        Animations scenes I reinvented with my own touch.<br>
+        <span style="font-size: 0.9rem; color: #777;">(animations by KIECA)</span>
+      </p>
+    </div>
+
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer2">
+        <video width="100%" id="video2" controls>
+          <source src="luffy vs lucci.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound redesign for Luffy vs Lucci animation.</div>
+      </div>
+
+      <div class="video-item" id="videoContainer3">
+        <video width="100%" id="video3" controls>
+          <source src="law vs kurohige.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound redesign for Law vs Kurohige animation.</div>
+      </div>
+    </div>
+
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer7">
+        <video width="100%" id="video7" controls>
+          <source src="friendnpalanim.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound design and music for animations.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content" id="mymusic">
+    <h2>My Music</h2>
+    <div style="text-align: center;">
+      <iframe class="soundcloud-embed" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F153898300&color=%23ab4e52&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" width="100%" height="450"></iframe>
+    </div>
+  </section>
+
+  <section class="content" id="contact">
+    <h2>Contact</h2>
+    <p>Email me at: <a href="mailto:ivan.sounddesigner@gmail.com" style="color: #ab4e52;">ivan.sounddesigner@gmail.com</a></p>
+  </section>
 
   <footer>
-    &copy; 2025 Creative Portfolio - Created by Me
+    <p>Made with 💻 by Ivan</p>
   </footer>
 
   <script>
-    const header = document.querySelector('header');
-
-    header.addEventListener('mousemove', (e) => {
-      const { width, height } = header.getBoundingClientRect();
-      const x = e.clientX - width / 2;
-      const y = e.clientY - height / 2;
-      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
-    });
-
-    const links = document.querySelectorAll('.nav-link');
+    // Add code to add active class to sections based on scrolling position
     const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const id = link.getAttribute('href').substring(1);
-        sections.forEach(section => section.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
+    window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href').substring(1);
+        const section = document.getElementById(href);
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
       });
     });
-
-    const setupGlow = (videoId, containerId) => {
-      const video = document.getElementById(videoId);
-      const container = document.getElementById(containerId);
-      video.addEventListener('play', () => container.classList.add('glow'));
-      video.addEventListener('pause', () => container.classList.remove('glow'));
-      video.addEventListener('ended', () => container.classList.remove('glow'));
-    };
-
-    setupGlow("video1", "videoContainer1");
-    setupGlow("video2", "videoContainer2");
-    setupGlow("video3", "videoContainer3");
-    setupGlow("video4", "videoContainer4");
-    setupGlow("video5", "videoContainer5");
-    setupGlow("video6", "videoContainer6");
-    setupGlow("video7", "videoContainer7");
   </script>
-
 </body>
 </html>
