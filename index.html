@@ -58,13 +58,8 @@
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(10, 10, 10, 0.5); /* più scuro */
+      background-color: rgba(10, 10, 10, 0.5);
       z-index: 1;
-      transition: background-color 0.3s ease;
-    }
-
-    header:hover::before {
-      background-color: rgba(10, 10, 10, 0.6);
     }
 
     header h1, header p {
@@ -87,11 +82,6 @@
       margin: 0 auto;
     }
 
-    header h1:hover, header p:hover,
-    .content h2:hover, .content p:hover {
-      text-shadow: 0 0 10px #ab4e52, 0 0 20px #ab4e52, 0 0 30px #ab4e52;
-    }
-
     .content {
       padding: 60px 20px;
       max-width: 1200px;
@@ -111,14 +101,6 @@
       color: #ab4e52;
       margin-bottom: 20px;
       text-align: left;
-      opacity: 0;
-      transform: translateX(-100px);
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-
-    .content.active h2 {
-      opacity: 1;
-      transform: translateX(0);
     }
 
     .about-container {
@@ -208,6 +190,13 @@
 
     section { display: none; }
     section.active { display: block; }
+
+    .soundcloud-embed {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -216,8 +205,9 @@
     <a href="#aboutme" class="nav-link">About Me</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#demoreel" class="nav-link">Demo Reel</a>
-    <a href="#sounddesign" class="nav-link">Sound Design</a>
+    <a href="#gameaudio" class="nav-link">Game Audio</a>
     <a href="#animationprojects" class="nav-link">Animation Projects</a>
+    <a href="#mymusic" class="nav-link">My Music</a>
     <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
@@ -248,7 +238,6 @@
       <div class="video-item" id="videoContainer1">
         <video width="100%" id="video1" controls>
           <source src="Demoreel.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
     </div>
@@ -263,15 +252,34 @@
     <p>- Audio editing and mixing</p>
   </section>
 
-  <section class="video-section" id="sounddesign">
-    <h2>Sound Design</h2>
+  <section class="video-section" id="gameaudio">
+    <h2>Game Audio</h2>
+
     <div class="video-wrapper">
-      <div class="video-item">Sound Design 1</div>
-      <div class="video-description">Sound and music for an indie horror game.</div>
+      <div class="video-item" id="videoContainer4">
+        <video width="100%" id="video4" controls>
+          <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-description">Sound design and music for the Whispering Woods trailer.</div>
     </div>
+
     <div class="video-wrapper">
-      <div class="video-item">Sound Design 2</div>
-      <div class="video-description">Sound design for animated cutscenes.</div>
+      <div class="video-item" id="videoContainer5">
+        <video width="100%" id="video5" controls>
+          <source src="My Video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-description">Experimental audio techniques and custom sounds.</div>
+    </div>
+
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer6">
+        <video width="100%" id="video6" controls>
+          <source src="inverta.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-description">Audio implementation and effects layering for Inverta project.</div>
     </div>
   </section>
 
@@ -288,18 +296,29 @@
       <div class="video-item" id="videoContainer2">
         <video width="100%" id="video2" controls>
           <source src="luffy vs lucci.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
-    </div>
 
-    <div class="video-wrapper">
       <div class="video-item" id="videoContainer3">
         <video width="100%" id="video3" controls>
           <source src="law vs kurohige.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
+
+      <!-- Nuovo placeholder video -->
+      <div class="video-item" id="videoContainer7">
+        <video width="100%" id="video7" controls>
+          <source src="placeholder-video.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sezione My Music -->
+  <section class="content" id="mymusic">
+    <h2>My Music</h2>
+    <div style="text-align: center;">
+      <iframe class="soundcloud-embed" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F153898300&color=%23ab4e52&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" width="100%" height="450"></iframe>
     </div>
   </section>
 
@@ -335,16 +354,11 @@
         e.preventDefault();
         const id = link.getAttribute('href').substring(1);
 
-        sections.forEach(section => {
-          section.classList.remove('active');
-        });
-
-        const target = document.getElementById(id);
-        target.classList.add('active');
+        sections.forEach(section => section.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
       });
     });
 
-    // GLOW EFFECT for all videos
     const setupGlow = (videoId, containerId) => {
       const video = document.getElementById(videoId);
       const container = document.getElementById(containerId);
@@ -356,6 +370,11 @@
     setupGlow("video1", "videoContainer1");
     setupGlow("video2", "videoContainer2");
     setupGlow("video3", "videoContainer3");
+    setupGlow("video4", "videoContainer4");
+    setupGlow("video5", "videoContainer5");
+    setupGlow("video6", "videoContainer6");
+    setupGlow("video7", "videoContainer7");
   </script>
+
 </body>
 </html>
