@@ -198,43 +198,6 @@
       border: none;
       border-radius: 10px;
     }
-
-    /* Form styling */
-    form {
-      margin-top: 30px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      background-color: #1a1a1a;
-      border: 1px solid #ab4e52;
-      color: white;
-      border-radius: 5px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #ab4e52;
-      border: none;
-      color: white;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #993c39;
-    }
-
   </style>
 </head>
 <body>
@@ -254,7 +217,6 @@
     <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
   </header>
 
-  <!-- Sezione About Me -->
   <section class="content active" id="aboutme">
     <h2>About Me</h2>
     <div class="about-container">
@@ -271,28 +233,113 @@
     </div>
   </section>
 
-  <!-- Sezione Contatti con il form -->
+  <!-- Ripristino della sezione Demo Reel -->
+  <section class="video-section" id="demoreel">
+    <h2>Demo Reel</h2>
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer1">
+        <video width="100%" id="video1" controls>
+          <source src="Demoreel.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">This is a representative video of my main work.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ripristino della sezione Skills -->
+  <section class="content" id="skills">
+    <h2>Skills</h2>
+    <p>- Sound Design for video games and animations</p>
+    <p>- Music composition</p>
+    <p>- Experience with audio software like Ableton, Reaper, Pro Tools</p>
+    <p>- Audio editing and mixing</p>
+  </section>
+
+  <!-- Ripristino della sezione Game Audio -->
+  <section class="video-section" id="gameaudio">
+    <h2>Game Audio</h2>
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer4">
+        <video width="100%" id="video4" controls>
+          <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound design and music for the Whispering Woods trailer.</div>
+      </div>
+      <div class="video-item" id="videoContainer5">
+        <video width="100%" id="video5" controls>
+          <source src="My Video.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Experimental audio techniques and custom sounds.</div>
+      </div>
+    </div>
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer6">
+        <video width="100%" id="video6" controls>
+          <source src="inverta.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Audio implementation and effects layering for Inverta project.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ripristino della sezione Animation Projects -->
+  <section class="video-section" id="animationprojects">
+    <h2>Animation Projects</h2>
+    <div style="text-align: center; margin-bottom: 30px;">
+      <p style="font-size: 1.1rem; color: #ccc;">
+        Animations scenes I reinvented with my own touch.<br>
+        <span style="font-size: 0.9rem; color: #777;">(animations by KIECA)</span>
+      </p>
+    </div>
+
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer2">
+        <video width="100%" id="video2" controls>
+          <source src="luffy vs lucci.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound redesign for Luffy vs Lucci animation.</div>
+      </div>
+
+      <div class="video-item" id="videoContainer3">
+        <video width="100%" id="video3" controls>
+          <source src="law vs kurohige.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound redesign for Law vs Kurohige animation.</div>
+      </div>
+    </div>
+
+    <div class="video-wrapper">
+      <div class="video-item" id="videoContainer7">
+        <video width="100%" id="video7" controls>
+          <source src="friendnpalanim.mp4" type="video/mp4">
+        </video>
+        <div class="video-description">Sound design and music for animations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ripristino della sezione My Music -->
+  <section class="content" id="mymusic">
+    <h2>My Music</h2>
+    <div style="text-align: center;">
+      <iframe class="soundcloud-embed" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F153898300&color=%23ab4e52&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" width="100%" height="450"></iframe>
+    </div>
+  </section>
+
+  <!-- Sezione Contatti (già corretta) -->
   <section class="content" id="contact">
     <h2>Contact</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> |
-      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> |
-      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> |
-      <a href="mailto:ivanbrugolo@gmail.com" style="color: #ab4e52;">Email</a>
-    </p>
-
-    <h3 style="margin-top: 30px; color: #ab4e52;">Send me a message</h3>
-    <form action="https://formspree.io/f/movdawdk" method="POST">
+    <form action="https://formspree.io/f/mnqzrqbo" method="POST">
       <label for="name">Your Name</label>
-      <input type="text" name="name" required>
-
+      <input type="text" id="name" name="name" required>
+      
       <label for="email">Your Email</label>
-      <input type="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea name="message" rows="6" required></textarea>
-
-      <button type="submit">Send</button>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
