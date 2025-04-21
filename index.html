@@ -375,12 +375,10 @@
     </div>
   </section>
 
-  <section class="content" id="mymusic">
+  <section id="mymusic">
     <h2>My Music</h2>
-    <div style="text-align: center;">
-      <p style="font-size: 1.1rem; color: #ccc;">Music created by me. <br>Listen to some of my tracks!</p>
-      <iframe class="soundcloud-embed" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourtrack&color=%23ff5500&inverse=false&auto_play=false&show_user=true" frameborder="no"></iframe>
-    </div>
+    <p style="font-size: 1.1rem; color: #ccc;">Music created by me.<br>Listen to some of my tracks!</p>
+    <iframe class="soundcloud-embed" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourtrack&color=%23ff5500&inverse=false&auto_play=false&show_user=true" frameborder="no"></iframe>
   </section>
 
   <section id="contact">
@@ -398,5 +396,17 @@
   <footer>
     <p>&copy; 2025 Ivan Brugolo. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
