@@ -198,6 +198,40 @@
       border: none;
       border-radius: 10px;
     }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ab4e52;
+      background-color: #333;
+      color: #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background-color: #ab4e52;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #a80000;
+    }
+
+    .video-wrapper {
+      gap: 30px;
+    }
   </style>
 </head>
 <body>
@@ -233,7 +267,6 @@
     </div>
   </section>
 
-  <!-- Ripristino della sezione Demo Reel -->
   <section class="video-section" id="demoreel">
     <h2>Demo Reel</h2>
     <div class="video-wrapper">
@@ -246,7 +279,6 @@
     </div>
   </section>
 
-  <!-- Ripristino della sezione Skills -->
   <section class="content" id="skills">
     <h2>Skills</h2>
     <p>- Sound Design for video games and animations</p>
@@ -255,7 +287,6 @@
     <p>- Audio editing and mixing</p>
   </section>
 
-  <!-- Ripristino della sezione Game Audio -->
   <section class="video-section" id="gameaudio">
     <h2>Game Audio</h2>
     <div class="video-wrapper">
@@ -263,26 +294,25 @@
         <video width="100%" id="video4" controls>
           <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
         </video>
-        <div class="video-description">Sound design and music for the Whispering Woods trailer.</div>
+        <div class="video-description">I’m currently working on the Music and the Sound Design for a videogame. <br> I will update this page once I have more material and implementations to show. <br> Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!</div>
       </div>
+
       <div class="video-item" id="videoContainer5">
         <video width="100%" id="video5" controls>
           <source src="My Video.mp4" type="video/mp4">
         </video>
-        <div class="video-description">Experimental audio techniques and custom sounds.</div>
+        <div class="video-description">I’m currently working on the Music and the Sound Design for a videogame. <br> I will update this page once I have more material and implementations to show. <br> Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!</div>
       </div>
     </div>
-    <div class="video-wrapper">
-      <div class="video-item" id="videoContainer6">
-        <video width="100%" id="video6" controls>
-          <source src="inverta.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">Audio implementation and effects layering for Inverta project.</div>
-      </div>
+
+    <div class="video-item" id="videoContainer6">
+      <video width="100%" id="video6" controls>
+        <source src="inverta.mp4" type="video/mp4">
+      </video>
+      <div class="video-description">I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.</div>
     </div>
   </section>
 
-  <!-- Ripristino della sezione Animation Projects -->
   <section class="video-section" id="animationprojects">
     <h2>Animation Projects</h2>
     <div style="text-align: center; margin-bottom: 30px;">
@@ -318,7 +348,6 @@
     </div>
   </section>
 
-  <!-- Ripristino della sezione My Music -->
   <section class="content" id="mymusic">
     <h2>My Music</h2>
     <div style="text-align: center;">
@@ -326,65 +355,25 @@
     </div>
   </section>
 
-  <!-- Sezione Contatti (già corretta) -->
   <section class="content" id="contact">
     <h2>Contact</h2>
-    <form action="https://formspree.io/f/mnqzrqbo" method="POST">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" required></textarea>
-      
+    <p>
+      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> |
+      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> |
+      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> |
+      <a href="mailto:ivanbrugolo94@gmail.com" style="color: #ab4e52;">ivanbrugolo94@gmail.com</a>
+    </p>
+
+    <form action="https://formspree.io/f/xqkwdzje" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" rows="5" placeholder="Your message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 Creative Portfolio - Created by Me
+    <p>&copy; 2025 Ivan Brugolo. All rights reserved.</p>
   </footer>
-
-  <script>
-    const header = document.querySelector('header');
-
-    header.addEventListener('mousemove', (e) => {
-      const { width, height } = header.getBoundingClientRect();
-      const x = e.clientX - width / 2;
-      const y = e.clientY - height / 2;
-      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
-    });
-
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-
-    links.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const id = link.getAttribute('href').substring(1);
-        sections.forEach(section => section.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-      });
-    });
-
-    const setupGlow = (videoId, containerId) => {
-      const video = document.getElementById(videoId);
-      const container = document.getElementById(containerId);
-      video.addEventListener('play', () => container.classList.add('glow'));
-      video.addEventListener('pause', () => container.classList.remove('glow'));
-      video.addEventListener('ended', () => container.classList.remove('glow'));
-    };
-
-    setupGlow("video1", "videoContainer1");
-    setupGlow("video2", "videoContainer2");
-    setupGlow("video3", "videoContainer3");
-    setupGlow("video4", "videoContainer4");
-    setupGlow("video5", "videoContainer5");
-    setupGlow("video6", "videoContainer6");
-    setupGlow("video7", "videoContainer7");
-  </script>
-
 </body>
 </html>
