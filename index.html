@@ -54,17 +54,6 @@
       background-attachment: fixed; /* Parallax */
     }
 
-    /* Aggiunta di un effetto parallax */
-    header {
-      animation: parallax 30s infinite linear;
-    }
-
-    @keyframes parallax {
-      0% { background-position: center top; }
-      50% { background-position: center bottom; }
-      100% { background-position: center top; }
-    }
-
     /* Sfumatura sopra l'immagine */
     header::before {
       content: '';
@@ -314,14 +303,15 @@
   </footer>
 
   <script>
-    // Effetto di movimento dell'immagine sul mouse
+    // Effetto di movimento dell'immagine sul mouse (inverso)
     const header = document.querySelector('header');
 
     header.addEventListener('mousemove', (e) => {
       const { width, height } = header.getBoundingClientRect();
       const x = e.clientX - width / 2;
       const y = e.clientY - height / 2;
-      header.style.backgroundPosition = `${50 + x / width * 10}% ${50 + y / height * 10}%`;
+      // Movimento inverso: l'immagine si sposterà in direzione opposta al movimento del mouse
+      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
     });
 
     const links = document.querySelectorAll('.nav-link');
