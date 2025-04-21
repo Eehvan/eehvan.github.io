@@ -208,6 +208,37 @@
 
     section { display: none; }
     section.active { display: block; }
+
+    
+
+/* Per applicare un effetto fade-in al caricamento */
+body {
+  opacity: 0;  /* Impostiamo l'iniziale invisibilità */
+  transition: opacity 1s ease-in-out;  /* Transizione dell'opacità */
+}
+
+/* Quando il contenuto è completamente caricato, rendiamo visibile il body */
+body.loaded {
+  opacity: 1;
+}
+
+/* Transizioni per altre sezioni */
+header, section, footer, .content, .video-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+body.loaded header,
+body.loaded section,
+body.loaded footer,
+body.loaded .content,
+body.loaded .video-item {
+  opacity: 1;
+}
+
+
+
+    
   </style>
 </head>
 <body>
@@ -450,6 +481,14 @@
     link.addEventListener('click', playRandomClickSound);
   });
 </script>
+
+
+    <!-- Aggiungi il codice JavaScript per il fade-in qui -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 
 
   
