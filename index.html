@@ -232,7 +232,7 @@
     <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
   </header>
 
-  <section class="content active" id="aboutme">
+  <section class="content" id="aboutme">
     <h2>About Me</h2>
     <div class="about-container">
       <div class="about-text">
@@ -249,7 +249,7 @@
     </div>
   </section>
 
-  <section class="video-section active" id="demoreel">
+  <section class="video-section" id="demoreel">
     <h2>Demo Reel</h2>
     <div class="video-wrapper">
       <div class="video-item">
@@ -310,17 +310,7 @@
   </footer>
 
   <script>
-    // Effetto di movimento dell'immagine sul mouse (inverso)
-    const header = document.querySelector('header');
-
-    header.addEventListener('mousemove', (e) => {
-      const { width, height } = header.getBoundingClientRect();
-      const x = e.clientX - width / 2;
-      const y = e.clientY - height / 2;
-      // Movimento inverso: l'immagine si sposterà in direzione opposta al movimento del mouse
-      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
-    });
-
+    // Funzione per attivare la visibilità delle sezioni
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
