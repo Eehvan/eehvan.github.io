@@ -19,6 +19,7 @@
       overflow-x: hidden;
       text-align: center;
       height: 100vh;
+      scroll-behavior: smooth; /* Transizione fluida tra le sezioni */
     }
 
     /* Header and navigation */
@@ -33,7 +34,7 @@
     }
 
     nav a {
-      color: #ff0000;
+      color: #ab4e52; /* Colore rosso personalizzato */
       text-decoration: none;
       font-size: 1.1rem;
       margin: 10px 0;
@@ -57,7 +58,7 @@
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 15px;
-      color: #ff0000;
+      color: #ab4e52; /* Colore rosso personalizzato */
       letter-spacing: 3px;
       animation: fadeIn 2s ease-in-out;
     }
@@ -88,7 +89,7 @@
 
     .content h2 {
       font-size: 2.5rem;
-      color: #ff0000;
+      color: #ab4e52; /* Colore rosso personalizzato */
       margin-bottom: 20px;
       letter-spacing: 2px;
     }
@@ -121,11 +122,22 @@
       color: #fff;
       font-size: 1.2rem;
       font-weight: bold;
-      border: 2px dashed #ff0000;
+      border: 2px dashed #ab4e52; /* Colore rosso personalizzato */
     }
 
     .video-item + .video-item {
       margin-top: 40px; /* Aggiunto spazio tra i video */
+    }
+
+    .video-description {
+      margin-left: 20px;
+      max-width: 400px;
+      color: #bbb;
+      font-size: 1.1rem;
+      display: inline-block;
+      vertical-align: top;
+      height: 450px;
+      line-height: 450px; /* Centra il testo verticalmente */
     }
 
     footer {
@@ -138,6 +150,7 @@
       width: 100%;
       text-align: center;
     }
+
   </style>
 </head>
 <body>
@@ -154,7 +167,7 @@
 
   <header>
     <h1>Chi Sono</h1>
-    <p>Creazioni web e design interattivo</p>
+    <p>Un musicista e sound designer appassionato di videogiochi.</p>
   </header>
 
   <!-- Sezione Chi Sono -->
@@ -170,39 +183,71 @@
   <section class="video-section" id="demoreel">
     <h2>I miei video</h2>
     <p>Guarda alcuni dei miei video e progetti digitali.</p>
-    <!-- Video Placeholder 1 -->
-    <div class="video-item">
-      Video 1 - Carica il tuo file video
+    <div>
+      <div class="video-description">
+        Video 1 - Questo è un placeholder per il video che caricherai. Puoi descrivere brevemente il contenuto del video qui.
+      </div>
+      <div class="video-item">
+        Video 1 - Carica il tuo file video
+      </div>
     </div>
-    <!-- Video Placeholder 2 -->
-    <div class="video-item">
-      Video 2 - Carica il tuo file video
+    <div>
+      <div class="video-description">
+        Video 2 - Descrizione del secondo video. Questo è il contenuto che hai creato per il secondo video, puoi metterci delle informazioni sul progetto.
+      </div>
+      <div class="video-item">
+        Video 2 - Carica il tuo file video
+      </div>
     </div>
-    <!-- Video Placeholder 3 -->
-    <div class="video-item">
-      Video 3 - Carica il tuo file video
+    <div>
+      <div class="video-description">
+        Video 3 - Un altro placeholder. Descrizione del progetto o del video che hai creato.
+      </div>
+      <div class="video-item">
+        Video 3 - Carica il tuo file video
+      </div>
     </div>
   </section>
 
   <!-- Sezione Sound Design -->
   <section class="video-section" id="sounddesign">
     <h2>Sound Design</h2>
-    <div class="video-item">
-      Sound Design Video 1 - Carica il tuo file
+    <div>
+      <div class="video-description">
+        Sound Design Video 1 - Descrizione del progetto 1 di sound design.
+      </div>
+      <div class="video-item">
+        Sound Design Video 1 - Carica il tuo file
+      </div>
     </div>
-    <div class="video-item">
-      Sound Design Video 2 - Carica il tuo file
+    <div>
+      <div class="video-description">
+        Sound Design Video 2 - Descrizione del progetto 2 di sound design.
+      </div>
+      <div class="video-item">
+        Sound Design Video 2 - Carica il tuo file
+      </div>
     </div>
   </section>
 
   <!-- Sezione Animation Projects -->
   <section class="video-section" id="animationprojects">
     <h2>Animation Projects</h2>
-    <div class="video-item">
-      Animation Video 1 - Carica il tuo file
+    <div>
+      <div class="video-description">
+        Animation Video 1 - Descrizione del progetto di animazione 1.
+      </div>
+      <div class="video-item">
+        Animation Video 1 - Carica il tuo file
+      </div>
     </div>
-    <div class="video-item">
-      Animation Video 2 - Carica il tuo file
+    <div>
+      <div class="video-description">
+        Animation Video 2 - Descrizione del progetto di animazione 2.
+      </div>
+      <div class="video-item">
+        Animation Video 2 - Carica il tuo file
+      </div>
     </div>
   </section>
 
