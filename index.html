@@ -189,11 +189,16 @@
       align-items: center;
       font-weight: bold;
       border: 2px dashed #ab4e52;
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
     }
 
     .video-item:hover {
       transform: scale(1.05);
+    }
+
+    .video-item.playing {
+      border-color: #ab4e52;
+      box-shadow: 0 0 20px #ab4e52, 0 0 40px #ab4e52;
     }
 
     .video-description {
@@ -252,9 +257,9 @@
   <section class="video-section" id="demoreel">
     <h2>Demo Reel</h2>
     <div class="video-wrapper">
-      <div class="video-item">
+      <div class="video-item" id="demoReelPlayer">
         <!-- Video Player integrato con il controllo -->
-        <video width="100%" height="auto" controls>
+        <video width="100%" height="auto" id="videoDemoReel" controls>
           <source src="Demoreel.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -326,6 +331,22 @@
         const target = document.getElementById(id);
         target.classList.add('active');
       });
+    });
+
+    // Aggiungere l'effetto di illuminazione sui bordi del video
+    const video = document.getElementById("videoDemoReel");
+    const videoItem = document.getElementById("demoReelPlayer");
+
+    video.addEventListener("play", () => {
+      videoItem.classList.add("playing");
+    });
+
+    video.addEventListener("pause", () => {
+      videoItem.classList.remove("playing");
+    });
+
+    video.addEventListener("ended", () => {
+      videoItem.classList.remove("playing");
     });
   </script>
 </body>
