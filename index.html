@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -65,7 +65,7 @@
     header h1, header p {
       position: relative;
       z-index: 2;
-      transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease-out, text-shadow 0.3s ease-out;
     }
 
     header h1 {
@@ -81,6 +81,11 @@
       color: #ccc;
       max-width: 700px;
       margin: 0 auto;
+    }
+
+    /* Aggiungi l'effetto di illuminazione al testo */
+    header h1:hover, header p:hover {
+      text-shadow: 0 0 10px #ab4e52, 0 0 20px #ab4e52, 0 0 30px #ab4e52;
     }
 
     .content {
@@ -306,6 +311,5 @@
       });
     });
   </script>
-
 </body>
 </html>
