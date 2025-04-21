@@ -103,102 +103,6 @@
       text-align: left;
     }
 
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .about-text {
-      flex: 1;
-      color: #bbb;
-    }
-
-    .about-image {
-      width: 300px;
-      height: 300px;
-      background-color: #333;
-      border: 2px dashed #ab4e52;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #777;
-      font-size: 1rem;
-      transition: transform 0.5s ease;
-    }
-
-    .about-image:hover {
-      transform: scale(1.1);
-    }
-
-    .video-section {
-      padding: 60px 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease-out;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .video-section.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .video-section h2 {
-      color: #ab4e52;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .video-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .video-item {
-      width: 100%;
-      max-width: 430px;
-      border: 2px dashed #ab4e52;
-      padding: 10px;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .video-item.glow {
-      box-shadow: 0 0 20px #ab4e52, 0 0 40px #ab4e52;
-    }
-
-    .video-description {
-      width: 100%;
-      text-align: center;
-      font-size: 1rem;
-      color: #aaa;
-      margin-top: 10px;
-    }
-
-    footer {
-      background-color: #111;
-      color: #888;
-      padding: 20px;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    section { display: none; }
-    section.active { display: block; }
-
-    .soundcloud-embed {
-      width: 100%;
-      height: 450px;
-      border: none;
-      border-radius: 10px;
-    }
-
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -229,26 +133,27 @@
       background-color: #a80000;
     }
 
+    footer {
+      background-color: #111;
+      color: #888;
+      padding: 20px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    section { display: none; }
+    section.active { display: block; }
+
+    .soundcloud-embed {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+    }
+
     .video-wrapper {
       gap: 30px;
     }
-
-    .contact-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .contact-links a {
-      color: #ab4e52;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    .contact-links a:hover { color: #fff; }
-
   </style>
 </head>
 <body>
@@ -284,106 +189,14 @@
     </div>
   </section>
 
-  <section class="video-section" id="demoreel">
-    <h2>Demo Reel</h2>
-    <div class="video-wrapper">
-      <div class="video-item" id="videoContainer1">
-        <video width="100%" id="video1" controls>
-          <source src="Demoreel.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">This is a representative video of my main work.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="content" id="skills">
-    <h2>Skills</h2>
-    <p>- Sound Design for video games and animations</p>
-    <p>- Music composition</p>
-    <p>- Experience with audio software like Ableton, Reaper, Pro Tools</p>
-    <p>- Audio editing and mixing</p>
-  </section>
-
-  <section class="video-section" id="gameaudio">
-    <h2>Game Audio</h2>
-    <div class="video-wrapper">
-      <div class="video-item" id="videoContainer4">
-        <video width="100%" id="video4" controls>
-          <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">
-          I’m currently working on the Music and the Sound Design for a videogame.<br>
-          I will update this page once I have more material and implementations to show.<br>
-          Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!
-        </div>
-      </div>
-
-      <div class="video-item" id="videoContainer5">
-        <video width="100%" id="video5" controls>
-          <source src="My Video.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">
-          I’m currently working on the Music and the Sound Design for a videogame.<br>
-          I will update this page once I have more material and implementations to show.<br>
-          Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!
-        </div>
-      </div>
-    </div>
-
-    <div class="video-item" id="videoContainer6">
-      <video width="100%" id="video6" controls>
-        <source src="inverta.mp4" type="video/mp4">
-      </video>
-      <div class="video-description">
-        I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.
-      </div>
-    </div>
-  </section>
-
-  <section class="video-section" id="animationprojects">
-    <h2>Animation Projects</h2>
-    <div style="text-align: center; margin-bottom: 30px;">
-      <p style="font-size: 1.1rem; color: #ccc;">
-        Animations scenes I reinvented with my own touch.<br>
-        <span style="font-size: 0.9rem; color: #777;">(animations by KIECA)</span>
-      </p>
-    </div>
-
-    <div class="video-wrapper">
-      <div class="video-item" id="videoContainer2">
-        <video width="100%" id="video2" controls>
-          <source src="luffy vs lucci.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">Sound redesign for Luffy vs Lucci animation.</div>
-      </div>
-
-      <div class="video-item" id="videoContainer3">
-        <video width="100%" id="video3" controls>
-          <source src="law vs kurohige.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">Sound redesign for Law vs Kurohige animation.</div>
-      </div>
-    </div>
-
-    <div class="video-wrapper">
-      <div class="video-item" id="videoContainer7">
-        <video width="100%" id="video7" controls>
-          <source src="friendnpalanim.mp4" type="video/mp4">
-        </video>
-        <div class="video-description">Sound design and music for animations.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="mymusic">
-    <h2>My Music</h2>
-    <p style="font-size: 1.1rem; color: #ccc;">Music created by me.<br>Listen to some of my tracks!</p>
-    <iframe class="soundcloud-embed" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourtrack&color=%23ff5500&inverse=false&auto_play=false&show_user=true" frameborder="no"></iframe>
-  </section>
-
-  <section id="contact">
+  <section class="content" id="contact">
     <h2>Contact</h2>
-    <p>Feel free to contact me via email: <a href="mailto:ivanbrugolo94@gmail.com" style="color: #ab4e52;">ivanbrugolo94@gmail.com</a></p>
+    <p>
+      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> |
+      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> |
+      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> |
+      <a href="mailto:ivanbrugolo94@gmail.com" style="color: #ab4e52;">ivanbrugolo94@gmail.com</a>
+    </p>
 
     <form action="https://formspree.io/f/xqkwdzje" method="POST" class="contact-form">
       <input type="text" name="name" placeholder="Name" required>
@@ -396,17 +209,5 @@
   <footer>
     <p>&copy; 2025 Ivan Brugolo. All rights reserved.</p>
   </footer>
-
-  <script>
-    document.querySelectorAll('.nav-link').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>
