@@ -175,21 +175,20 @@
 
     .video-wrapper {
       display: flex;
-      align-items: center;
+      justify-content: center;
       margin-bottom: 40px;
       flex-wrap: wrap;
     }
 
     .video-item {
-      width: 60%;
-      height: 300px;
+      width: 80%;
+      max-width: 800px;
       background-color: #222;
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: bold;
       border: 2px dashed #ab4e52;
-      margin-right: 20px;
       transition: transform 0.3s ease-in-out;
     }
 
@@ -198,9 +197,10 @@
     }
 
     .video-description {
-      width: 35%;
       font-size: 1rem;
       color: #aaa;
+      margin-top: 20px;
+      text-align: center;
     }
 
     footer {
@@ -249,14 +249,18 @@
     </div>
   </section>
 
-  <section class="video-section" id="demoreel">
+  <section class="video-section active" id="demoreel">
     <h2>Demo Reel</h2>
     <div class="video-wrapper">
       <div class="video-item">
-        <a href="Demoreel.mp4" target="_blank">Watch Demo Reel</a>
+        <!-- Video Player integrato con il controllo -->
+        <video width="100%" height="auto" controls>
+          <source src="https://github.com/username/repository/raw/main/Demoreel.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
-      <div class="video-description">This is a representative video of my main work.</div>
     </div>
+    <div class="video-description">This is a representative video of my main work.</div>
   </section>
 
   <section class="content" id="skills">
