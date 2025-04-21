@@ -621,11 +621,22 @@ nav {
     <script>
 const menuToggle = document.querySelector('.menu-toggle');
 const menuContainer = document.querySelector('.menu-container');
+const menuLinks = document.querySelectorAll('.nav-link');
 
 // Aggiungi un listener per il bottone hamburger
 menuToggle.addEventListener('click', function() {
   menuContainer.classList.toggle('open');
 });
+
+// Aggiungi un listener a ciascun link del menu per chiudere il menu dopo il clic
+menuLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    if (menuContainer.classList.contains('open')) {
+      menuContainer.classList.remove('open');
+    }
+  });
+});
+
 
   </script>
   
