@@ -232,6 +232,23 @@
     .video-wrapper {
       gap: 30px;
     }
+
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-links a {
+      color: #ab4e52;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-links a:hover { color: #fff; }
+
   </style>
 </head>
 <body>
@@ -294,14 +311,22 @@
         <video width="100%" id="video4" controls>
           <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
         </video>
-        <div class="video-description">I’m currently working on the Music and the Sound Design for a videogame. <br> I will update this page once I have more material and implementations to show. <br> Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!</div>
+        <div class="video-description">
+          I’m currently working on the Music and the Sound Design for a videogame.<br>
+          I will update this page once I have more material and implementations to show.<br>
+          Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!
+        </div>
       </div>
 
       <div class="video-item" id="videoContainer5">
         <video width="100%" id="video5" controls>
           <source src="My Video.mp4" type="video/mp4">
         </video>
-        <div class="video-description">I’m currently working on the Music and the Sound Design for a videogame. <br> I will update this page once I have more material and implementations to show. <br> Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!</div>
+        <div class="video-description">
+          I’m currently working on the Music and the Sound Design for a videogame.<br>
+          I will update this page once I have more material and implementations to show.<br>
+          Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!
+        </div>
       </div>
     </div>
 
@@ -309,7 +334,9 @@
       <video width="100%" id="video6" controls>
         <source src="inverta.mp4" type="video/mp4">
       </video>
-      <div class="video-description">I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.</div>
+      <div class="video-description">
+        I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.
+      </div>
     </div>
   </section>
 
@@ -351,18 +378,14 @@
   <section class="content" id="mymusic">
     <h2>My Music</h2>
     <div style="text-align: center;">
-      <iframe class="soundcloud-embed" scrolling="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F153898300&color=%23ab4e52&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" width="100%" height="450"></iframe>
+      <p style="font-size: 1.1rem; color: #ccc;">Music created by me. <br>Listen to some of my tracks!</p>
+      <iframe class="soundcloud-embed" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/yourtrack&color=%23ff5500&inverse=false&auto_play=false&show_user=true" frameborder="no"></iframe>
     </div>
   </section>
 
-  <section class="content" id="contact">
+  <section id="contact">
     <h2>Contact</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/ivanbrugolo/" style="color: #ab4e52;">LinkedIn</a> |
-      <a href="https://soundcloud.com/hvnhvnn" style="color: #ab4e52;">SoundCloud</a> |
-      <a href="https://www.instagram.com/eeh.van/" style="color: #ab4e52;">Instagram</a> |
-      <a href="mailto:ivanbrugolo94@gmail.com" style="color: #ab4e52;">ivanbrugolo94@gmail.com</a>
-    </p>
+    <p>Feel free to contact me via email: <a href="mailto:ivanbrugolo94@gmail.com" style="color: #ab4e52;">ivanbrugolo94@gmail.com</a></p>
 
     <form action="https://formspree.io/f/xqkwdzje" method="POST" class="contact-form">
       <input type="text" name="name" placeholder="Name" required>
