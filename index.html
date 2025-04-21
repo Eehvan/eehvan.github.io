@@ -198,18 +198,6 @@
       border: none;
       border-radius: 10px;
     }
-
-    /* Aggiunti gli stili per ingrandire i video */
-    .video-item iframe, .video-item video {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Spazio tra testo e video */
-    .video-wrapper {
-      margin-bottom: 60px;
-    }
-
   </style>
 </head>
 <body>
@@ -245,6 +233,7 @@
     </div>
   </section>
 
+  <!-- Ripristino della sezione Demo Reel -->
   <section class="video-section" id="demoreel">
     <h2>Demo Reel</h2>
     <div class="video-wrapper">
@@ -257,6 +246,7 @@
     </div>
   </section>
 
+  <!-- Ripristino della sezione Skills -->
   <section class="content" id="skills">
     <h2>Skills</h2>
     <p>- Sound Design for video games and animations</p>
@@ -265,14 +255,10 @@
     <p>- Audio editing and mixing</p>
   </section>
 
+  <!-- Ripristino della sezione Game Audio -->
   <section class="video-section" id="gameaudio">
     <h2>Game Audio</h2>
     <div class="video-wrapper">
-      <p style="font-size: 1.1rem; color: #ccc; text-align: center;">
-        I’m currently working on the Music and the Sound Design for a videogame.<br>
-        I will update this page once I have more material and implementations to show.<br><br>
-        Meanwhile, enjoy a funny Character voices creation process and the first glimpse of a trailer with my music!
-      </p>
       <div class="video-item" id="videoContainer4">
         <video width="100%" id="video4" controls>
           <source src="Whispering Woods Game Trailer.mp4" type="video/mp4">
@@ -286,11 +272,7 @@
         <div class="video-description">Experimental audio techniques and custom sounds.</div>
       </div>
     </div>
-
     <div class="video-wrapper">
-      <p style="font-size: 1.1rem; color: #ccc; text-align: center;">
-        I'm currently working on the complete audio design for a dark, atmospheric platformer inspired by INSIDE. My role includes creating immersive sound effects, dynamic music, and ambient soundscapes that support the game’s emotional tone and narrative pacing. The project focuses heavily on minimalism and tension, allowing sound to play a key role in storytelling and world-building.
-      </p>
       <div class="video-item" id="videoContainer6">
         <video width="100%" id="video6" controls>
           <source src="inverta.mp4" type="video/mp4">
@@ -300,6 +282,7 @@
     </div>
   </section>
 
+  <!-- Ripristino della sezione Animation Projects -->
   <section class="video-section" id="animationprojects">
     <h2>Animation Projects</h2>
     <div style="text-align: center; margin-bottom: 30px;">
@@ -335,6 +318,7 @@
     </div>
   </section>
 
+  <!-- Ripristino della sezione My Music -->
   <section class="content" id="mymusic">
     <h2>My Music</h2>
     <div style="text-align: center;">
@@ -342,41 +326,65 @@
     </div>
   </section>
 
+  <!-- Sezione Contatti (già corretta) -->
   <section class="content" id="contact">
     <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:ivan.sounddesigner@gmail.com" style="color: #ab4e52;">ivan.sounddesigner@gmail.com</a></p>
+    <form action="https://formspree.io/f/mnqzrqbo" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
-    <p>Made with 💻 by Ivan</p>
+    &copy; 2025 Creative Portfolio - Created by Me
   </footer>
 
   <script>
-    // Add code to add active class to sections based on scrolling position
+    const header = document.querySelector('header');
+
+    header.addEventListener('mousemove', (e) => {
+      const { width, height } = header.getBoundingClientRect();
+      const x = e.clientX - width / 2;
+      const y = e.clientY - height / 2;
+      header.style.backgroundPosition = `${50 - x / width * 10}% ${50 - y / height * 10}%`;
+    });
+
+    const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
 
-    window.addEventListener('scroll', () => {
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-          section.classList.add('active');
-        } else {
-          section.classList.remove('active');
-        }
-      });
-
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href').substring(1);
-        const section = document.getElementById(href);
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const id = link.getAttribute('href').substring(1);
+        sections.forEach(section => section.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
       });
     });
+
+    const setupGlow = (videoId, containerId) => {
+      const video = document.getElementById(videoId);
+      const container = document.getElementById(containerId);
+      video.addEventListener('play', () => container.classList.add('glow'));
+      video.addEventListener('pause', () => container.classList.remove('glow'));
+      video.addEventListener('ended', () => container.classList.remove('glow'));
+    };
+
+    setupGlow("video1", "videoContainer1");
+    setupGlow("video2", "videoContainer2");
+    setupGlow("video3", "videoContainer3");
+    setupGlow("video4", "videoContainer4");
+    setupGlow("video5", "videoContainer5");
+    setupGlow("video6", "videoContainer6");
+    setupGlow("video7", "videoContainer7");
   </script>
+
 </body>
 </html>
