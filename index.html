@@ -3,97 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Il Mio Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+  <title>Portfolio Creativo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Outfit', sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Anonymous Pro', monospace;
+      background-color: #0a0a0a;
+      color: white;
+      overflow-x: hidden;
+      text-align: center;
+      height: 100vh;
+    }
+
     header {
-      padding: 3rem 1rem;
-      text-align: center;
-      background: linear-gradient(90deg, #6e00ff, #c300ff);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #1e1e1e;
     }
+
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.3rem;
+      font-size: 5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ff0000;
+      letter-spacing: 5px;
+      animation: fadeIn 2s ease-in-out;
     }
+
     header p {
-      font-weight: 300;
-      color: #e0e0e0;
+      font-size: 1.5rem;
+      color: #ccc;
+      animation: fadeIn 2s ease-in-out 0.5s;
     }
-    .section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .section h2 {
-      border-left: 5px solid #c300ff;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .project {
-      background-color: #1a1a1a;
-      padding: 1rem;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-    }
-    footer {
+
+    .content {
+      padding: 50px 20px;
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
+    }
+
+    .content h2 {
+      font-size: 2.5rem;
+      color: #ff0000;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      color: #bbb;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    footer {
+      background-color: #111;
       color: #888;
+      padding: 20px;
+      font-size: 0.9rem;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Mario Rossi</h1>
-    <p>Sviluppatore Frontend | Creatore di cose belle sul Web</p>
+    <h1>Il Mio Portfolio</h1>
+    <p>Creazioni web e design interattivo</p>
   </header>
 
-  <section class="section">
+  <section class="content">
     <h2>Chi Sono</h2>
-    <p>Ciao! Sono Mario, uno sviluppatore web appassionato di design e tecnologie moderne. Creo siti web interattivi, responsivi e accessibili con HTML, CSS e JavaScript.</p>
+    <p>Sono un sviluppatore web che crea esperienze digitali innovative. Amo lavorare su progetti che combinano design, interattività e un tocco di creatività unica.</p>
   </section>
 
-  <section class="section">
-    <h2>Progetti</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Portfolio Creativo</h3>
-        <p>Un sito portfolio personale con animazioni leggere e dark mode.</p>
-      </div>
-      <div class="project">
-        <h3>Landing Page per App</h3>
-        <p>Design moderno e mobile-first per una startup tech.</p>
-      </div>
-      <div class="project">
-        <h3>Blog Statico</h3>
-        <p>Blog semplice con supporto per Markdown e codice evidenziato.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Contatti</h2>
-    <p>Puoi scrivermi su <a href="mailto:email@email.com" style="color:#c300ff;">email@email.com</a> oppure trovarmi su <a href="#" style="color:#c300ff;">LinkedIn</a>.</p>
+  <section class="content">
+    <h2>Progetti Recenti</h2>
+    <p>Alcuni dei miei lavori più recenti includono siti interattivi, applicazioni e design per brand emergenti. Mi piace sperimentare e spingere i limiti della creatività nel web design.</p>
   </section>
 
   <footer>
-    &copy; 2025 Mario Rossi. Tutti i diritti riservati.
+    &copy; 2025 Portfolio Creativo - Creato da Me
   </footer>
+
 </body>
 </html>
