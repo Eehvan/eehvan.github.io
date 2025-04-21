@@ -37,13 +37,33 @@
     nav a:hover { color: #fff; }
 
     header {
-      height: 50vh;
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #1e1e1e;
       text-align: center;
+      background-color: #1e1e1e;
+      background-image: url('your-image.jpg'); /* Sostituisci con il percorso della tua immagine */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 10, 10, 0.7);
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
     }
 
     header h1 {
@@ -65,6 +85,14 @@
       padding: 60px 20px;
       max-width: 1200px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .content.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .content h2 {
@@ -100,6 +128,14 @@
 
     .video-section {
       padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .video-section.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .video-section h2 {
@@ -141,14 +177,8 @@
       text-align: center;
     }
 
-    section {
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    section.hidden {
-      display: none;
-      opacity: 0;
-    }
+    section { display: none; }
+    section.active { display: block; }
   </style>
 </head>
 <body>
@@ -167,7 +197,7 @@
     <p>I'm Ivan, a 24 years old musician and sound designer who is really passionate about videogames.</p>
   </header>
 
-  <section class="content" id="aboutme">
+  <section class="content active" id="aboutme">
     <h2>About Me</h2>
     <div class="about-container">
       <div class="about-text">
@@ -235,15 +265,20 @@
   </footer>
 
   <script>
-    const navLinks = document.querySelectorAll('.nav-link');
+    const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
+    links.forEach(link => {
+      link.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        sections.forEach(sec => sec.classList.add('hidden'));
-        target.classList.remove('hidden');
+        const id = link.getAttribute('href').substring(1);
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+
+        const target = document.getElementById(id);
+        target.classList.add('active');
       });
     });
   </script>
