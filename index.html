@@ -433,112 +433,110 @@ nav {
 
 
 
+/* Griglia progetti */
+.projects-section {
+  text-align: center;
+  padding: 50px 20px;
+}
 
-<head>
-    <style>
-        /* Stile dei riquadri con immagini */
-        .projects {
-            text-align: center;
-            margin-top: 50px;
-        }
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
 
-        .project-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.project-box {
+  width: 250px;
+  height: 250px;
+  background: #f5f5f5;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-        .project-box {
-            width: 45%;
-            cursor: pointer;
-            border: 2px solid #ccc;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
+.project-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        .project-box:hover {
-            background-color: #f0f0f0;
-        }
+.project-box:hover {
+  transform: scale(1.05);
+}
 
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+.project-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
 
-        .project-box p {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-        }
+/* Modal full screen */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+}
 
-        /* Stile del Modal (lightbox) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  margin: 5% auto;
+  max-width: 90%;
+  height: 80%;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
 
-        .modal-content {
-            display: flex;
-            justify-content: space-between;
-            margin: 50px auto;
-            background-color: white;
-            max-width: 1200px;
-            padding: 20px;
-            border-radius: 10px;
-        }
+.modal-left, .modal-right {
+  padding: 30px;
+  width: 50%;
+  overflow-y: auto;
+}
 
-        .modal-left {
-            flex: 1;
-            padding: 20px;
-            text-align: center;
-        }
+.modal-right video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
-        .modal-right {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #333;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-        .modal-image {
-            width: 100%;
-            height: auto;
-        }
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    height: auto;
+    max-height: 90%;
+  }
 
-        .close {
-            color: #aaa;
-            font-size: 30px;
-            font-weight: bold;
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            transition: all 0.3s ease;
-        }
+  .modal-left, .modal-right {
+    width: 100%;
+  }
+}
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Stile per il video */
-        video {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin-top: 20px;
-        }
-    </style>
-</head>
 
 
 
@@ -591,60 +589,56 @@ nav {
 
 
 <!-- Sezione Progetti -->
-<div class="projects">
-    <h3>My Projects</h3>
-
-    <div class="project-grid">
-        <!-- Riquadro 1 (Game Audio) -->
-        <div class="project-box" onclick="openModal('modal1')">
-            <img src="immagini/project1.jpg" alt="Project 1" class="project-image">
-            <p>Game Audio</p>
-        </div>
-
-        <!-- Riquadro 2 (Animation) -->
-        <div class="project-box" onclick="openModal('modal2')">
-            <img src="immagini/project2.jpg" alt="Project 2" class="project-image">
-            <p>Animation</p>
-        </div>
+<section class="projects-section">
+  <h2>My Projects</h2>
+  <div class="project-grid">
+    <!-- Riquadro 1 -->
+    <div class="project-box" onclick="openModal('modal1')">
+      <img src="game.png" alt="Game Audio">
+      <div class="project-title">Game Audio</div>
     </div>
-</div>
 
-<!-- Modal per Progetto 1 -->
+    <!-- Riquadro 2 -->
+    <div class="project-box" onclick="openModal('modal2')">
+      <img src="animation.png" alt="Animation Projects">
+      <div class="project-title">Animation</div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal 1 -->
 <div id="modal1" class="modal">
+  <div class="modal-content">
     <span class="close" onclick="closeModal('modal1')">&times;</span>
-    <div class="modal-content">
-        <div class="modal-left">
-            <img src="immagini/project1.jpg" alt="Project 1" class="modal-image">
-        </div>
-        <div class="modal-right">
-            <h2>Project 1: Game Audio</h2>
-            <p>Description of the game audio project goes here...</p>
-            <video width="100%" controls>
-                <source src="video/project1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <div class="modal-left">
+      <h2>Game Audio</h2>
+      <p>Description of the game audio project goes here...</p>
     </div>
+    <div class="modal-right">
+      <video controls>
+        <source src="video/project1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 </div>
 
-<!-- Modal per Progetto 2 -->
+<!-- Modal 2 -->
 <div id="modal2" class="modal">
+  <div class="modal-content">
     <span class="close" onclick="closeModal('modal2')">&times;</span>
-    <div class="modal-content">
-        <div class="modal-left">
-            <img src="immagini/project2.jpg" alt="Project 2" class="modal-image">
-        </div>
-        <div class="modal-right">
-            <h2>Project 2: Animation</h2>
-            <p>Description of the animation project goes here...</p>
-            <video width="100%" controls>
-                <source src="video/project2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <div class="modal-left">
+      <h2>Animation</h2>
+      <p>Description of the animation project goes here...</p>
     </div>
+    <div class="modal-right">
+      <video controls>
+        <source src="video/project2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 </div>
-
 
   
 
