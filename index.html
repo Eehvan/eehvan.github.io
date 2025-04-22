@@ -541,45 +541,69 @@ nav {
   }
 </style>
 
+
+
+  
+  <style>
+  /* Nascondi la versione embed su desktop */
+  @media (min-width: 768px) {
+    .mobile-embed {
+      display: none;
+    }
+    .desktop-embed-container {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .desktop-embed-container > div {
+      flex: 1 1 48%;
+    }
+  }
+
+  /* Nascondi la versione desktop su mobile */
+  @media (max-width: 767px) {
+    .desktop-embed-container {
+      display: none;
+    }
+    .mobile-embed iframe {
+      width: 100%;
+    }
+  }
+</style>
+
 <div style="text-align: center; margin-top: 50px;">
   <h3 style="margin-bottom: 20px;">Check out the Sound Libraries I created with a Gaming Studio on Itch.io</h3>
   <p style="margin-bottom: 30px;">Explore my work and support my projects by playing or downloading them!</p>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-
-    <!-- Medieval Library -->
-    <div style="flex: 1 1 500px; max-width: 552px;">
+  <!-- Versione desktop con la pagina completa -->
+  <div class="desktop-embed-container">
+    <div>
       <h4 style="margin-bottom: 10px;">Medieval Library</h4>
-
-      <!-- Versione desktop (pagina intera) -->
-      <iframe class="embed-desktop" src="https://jabszgamingstudios.itch.io/thefabledlute" width="100%" height="600" style="border: none;"></iframe>
-
-      <!-- Versione mobile (embed ufficiale) -->
-      <iframe class="embed-mobile" src="https://itch.io/embed/3460053" width="100%" height="167" frameborder="0" style="border: none;">
-        <a href="https://jabszgamingstudios.itch.io/thefabledlute">Medieval Sound Pack: The Fabled Lute</a>
-      </iframe>
+      <iframe src="https://jabszgamingstudios.itch.io/thefabledlute" width="100%" height="600" style="border: none;"></iframe>
     </div>
-
-    <!-- Ethnic Tribal Library -->
-    <div style="flex: 1 1 500px; max-width: 552px;">
+    <div>
       <h4 style="margin-bottom: 10px;">Ethnic Tribal Library</h4>
+      <iframe src="https://jabszgamingstudios.itch.io/theforgottentones" width="100%" height="600" style="border: none;"></iframe>
+    </div>
+  </div>
 
-      <!-- Versione desktop -->
-      <iframe class="embed-desktop" src="https://jabszgamingstudios.itch.io/theforgottentones" width="100%" height="600" style="border: none;"></iframe>
-
-      <!-- Versione mobile -->
-      <iframe class="embed-mobile" src="https://itch.io/embed/3403139" width="100%" height="167" frameborder="0" style="border: none;">
-        <a href="https://jabszgamingstudios.itch.io/theforgottentones">Tribal/Ancient Technology Sound Pack: The Forgotten Tones</a>
+  <!-- Versione mobile con gli embed ufficiali -->
+  <div class="mobile-embed">
+    <div style="margin-bottom: 30px;">
+      <h4 style="margin-bottom: 10px;">Medieval Library</h4>
+      <iframe src="https://itch.io/embed/3460053" height="167" frameborder="0" style="width: 100%;">
+        <a href="https://jabszgamingstudios.itch.io/thefabledlute">The Fabled Lute</a>
       </iframe>
     </div>
-
+    <div>
+      <h4 style="margin-bottom: 10px;">Ethnic Tribal Library</h4>
+      <iframe src="https://itch.io/embed/3403139" height="167" frameborder="0" style="width: 100%;">
+        <a href="https://jabszgamingstudios.itch.io/theforgottentones">The Forgotten Tones</a>
+      </iframe>
+    </div>
   </div>
 </div>
-
-
-
-
-
 
 
 
