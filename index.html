@@ -433,6 +433,48 @@ nav {
 
 
 
+<style>
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.preview-box {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  position: relative;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.preview-box:hover {
+  transform: scale(1.05);
+}
+
+.preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-title {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+</style>
 
 
 
@@ -480,8 +522,25 @@ nav {
       <p><a href="https://drive.google.com/file/d/1WGZodX0-DwIqSoJ1EcbxCoJqQIUfsf7z/view?usp=sharing" style="color: #ab4e52;">Check my CV</a></p>
     </div>
     </div>
+  
 
   
+<section id="project-preview" style="padding: 60px 20px;">
+  <h2 style="text-align: center;">Explore My Projects</h2>
+  <div class="preview-grid">
+    <!-- Riquadro 1 -->
+    <div class="preview-box">
+      <img src="immagini/game.png" alt="Game Audio">
+      <div class="preview-title">Game Audio</div>
+    </div>
+
+    <!-- Riquadro 2 -->
+    <div class="preview-box">
+      <img src="immagini/animation.png" alt="Animation">
+      <div class="preview-title">Animation</div>
+    </div>
+  </div>
+</section>
 
 
 
