@@ -433,7 +433,7 @@ nav {
 
 
 
-/* Griglia progetti */
+/* Sezione Progetti */
 .projects-section {
   text-align: center;
   padding: 50px 20px;
@@ -477,9 +477,10 @@ nav {
   color: white;
   padding: 10px;
   font-weight: bold;
+  text-align: center;
 }
 
-/* Modal full screen */
+/* Modal a schermo intero */
 .modal {
   display: none;
   position: fixed;
@@ -590,17 +591,17 @@ nav {
 
 <!-- Sezione Progetti -->
 <section class="projects-section">
-  <h2>My Projects</h2>
+  <h2>I Miei Progetti</h2>
   <div class="project-grid">
     <!-- Riquadro 1 -->
     <div class="project-box" onclick="openModal('modal1')">
-      <img src="game.png" alt="Game Audio">
+      <img src="immagini/game.png" alt="Game Audio">
       <div class="project-title">Game Audio</div>
     </div>
 
     <!-- Riquadro 2 -->
     <div class="project-box" onclick="openModal('modal2')">
-      <img src="animation.png" alt="Animation Projects">
+      <img src="immagini/animation.png" alt="Animation Projects">
       <div class="project-title">Animation</div>
     </div>
   </div>
@@ -612,12 +613,12 @@ nav {
     <span class="close" onclick="closeModal('modal1')">&times;</span>
     <div class="modal-left">
       <h2>Game Audio</h2>
-      <p>Description of the game audio project goes here...</p>
+      <p>Descrizione del progetto audio per videogiochi.</p>
     </div>
     <div class="modal-right">
       <video controls>
         <source src="video/project1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Il tuo browser non supporta il tag video.
       </video>
     </div>
   </div>
@@ -629,16 +630,17 @@ nav {
     <span class="close" onclick="closeModal('modal2')">&times;</span>
     <div class="modal-left">
       <h2>Animation</h2>
-      <p>Description of the animation project goes here...</p>
+      <p>Descrizione del progetto di animazione.</p>
     </div>
     <div class="modal-right">
       <video controls>
         <source src="video/project2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Il tuo browser non supporta il tag video.
       </video>
     </div>
   </div>
 </div>
+
 
   
 
@@ -1022,7 +1024,7 @@ menuLinks.forEach(link => {
 
 
 
-  <script>
+<script>
   function openModal(id) {
     document.getElementById(id).style.display = 'block';
   }
@@ -1040,7 +1042,6 @@ menuLinks.forEach(link => {
     });
   }
 </script>
-
 
 
 
