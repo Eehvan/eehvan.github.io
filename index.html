@@ -964,6 +964,55 @@ menuLinks.forEach(link => {
 
 
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const aboutBoxes = document.querySelectorAll('.about-box');
+    const modal = document.getElementById('full-screen-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const modalVideo = document.getElementById('modal-video');
+    
+    // Aggiungi l'evento di apertura della modale per ogni riquadro
+    aboutBoxes.forEach(box => {
+      box.addEventListener('click', function(event) {
+        event.preventDefault();  // Preveniamo il comportamento di default (il click sui link)
+        const target = box.getAttribute('data-target');
+        
+        // Personalizza la modale in base al target
+        if (target === 'sounddesign') {
+          modalTitle.textContent = 'Game Audio';
+          modalText.textContent = 'Discover the world of game audio, sound design, and its implementation in gaming projects.';
+          modalVideo.src = 'path_to_sounddesign_video.mp4'; // Sostituisci con il tuo video
+        } else if (target === 'animationprojects') {
+          modalTitle.textContent = 'Animation Projects';
+          modalText.textContent = 'Explore the creative process behind our animation projects and the techniques we use.';
+          modalVideo.src = 'path_to_animationprojects_video.mp4'; // Sostituisci con il tuo video
+        }
+
+        // Mostra la modale
+        modal.style.display = 'flex';
+      });
+    });
+
+    // Chiudi la modale
+    closeModalBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      modalVideo.pause();
+    });
+    
+    // Chiudi la modale cliccando fuori dalla finestra
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modalVideo.pause();
+      }
+    });
+  });
+</script>
+
+
+
   
 </body>
 </html>
