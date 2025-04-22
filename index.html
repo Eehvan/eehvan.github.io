@@ -1054,20 +1054,21 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
       const target = box.getAttribute('data-target');
 
+      // Modifica il contenuto in base al progetto selezionato
       if (target === 'project1') {
-        fullScreenTitle.textContent = 'Check more';
-        fullScreenText.textContent = 'Creative sound design work to create a new atmosphere.';
-        videoSource.src = 'Its fun to make these.mp4';  // Video per il progetto 1
+        fullScreenTitle.textContent = 'Project 1';
+        fullScreenText.textContent = 'This is a description for Project 1. More details about the project can be found here.';
+        videoSource.src = 'Its fun to make these.mp4';  // Sostituisci con il percorso del video del progetto 1
       } else if (target === 'project2') {
-        fullScreenTitle.textContent = 'Check more';
+        fullScreenTitle.textContent = 'Project 2';
         fullScreenText.textContent = 'This is a description for Project 2. More details about the project can be found here.';
-        videoSource.src = 'another-video.mp4';  // Video per il progetto 2
+        videoSource.src = 'another-video.mp4';  // Sostituisci con il percorso del video del progetto 2
       }
 
       // Mostra la finestra a schermo intero
       fullScreenContainer.style.display = 'flex';
 
-      // Ricarica il video e lo avvia
+      // Forza il ricaricamento del video
       fullScreenVideo.load();
       fullScreenVideo.play();
     });
