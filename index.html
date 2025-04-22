@@ -558,33 +558,37 @@ nav {
 
 
   
-  <!-- Contenuti della pagina, come il contenitore dei riquadri e la pagina a schermo intero -->
-  <div class="about-links-container">
-    <a href="#" class="about-box" data-target="project1">
-      <img src="immagini/placeholder1.jpg" alt="Project 1" />
-      <span>Project 1</span>
-    </a>
-    <a href="#" class="about-box" data-target="project2">
-      <img src="immagini/placeholder2.jpg" alt="Project 2" />
-      <span>Project 2</span>
-    </a>
-  </div>
+<!-- Contenuti della pagina, come il contenitore dei riquadri e la pagina a schermo intero -->
+<div class="about-links-container">
+  <a href="#" class="about-box" data-target="project1">
+    <img src="immagini/placeholder1.jpg" alt="Project 1" />
+    <span>Project 1</span>
+  </a>
+  <a href="#" class="about-box" data-target="project2">
+    <img src="immagini/placeholder2.jpg" alt="Project 2" />
+    <span>Project 2</span>
+  </a>
+</div>
 
-  <div id="full-screen-container" class="full-screen-container">
-    <div class="full-screen-content">
-      <div class="full-screen-left">
-        <video id="full-screen-video" width="100%" height="100%" autoplay muted loop>
-          <source id="video-source" src="" type="video/mp4">
-        </video>
-      </div>
-      <div class="full-screen-right">
-        <h1 id="full-screen-title">Title</h1>
-        <p id="full-screen-text">This is the placeholder text for the selected project.</p>
-        <button id="close-full-screen" class="close-full-screen">Close</button>
-      </div>
+<!-- Finestra a schermo intero -->
+<div id="full-screen-container" class="full-screen-container">
+  <div class="full-screen-content">
+    <!-- Video placeholder (sinistra) -->
+    <div class="full-screen-left">
+      <video id="full-screen-video" width="100%" height="100%" autoplay muted loop>
+        <source src="demoreel.mp4" type="video/mp4"> <!-- Percorso video -->
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Testo descrizione (destra) -->
+    <div class="full-screen-right">
+      <h1 id="full-screen-title">Title</h1>
+      <p id="full-screen-text">This is the placeholder text for the selected project.</p>
+      <button id="close-full-screen" class="close-full-screen">Close</button>
     </div>
   </div>
-
+</div>
 
 
 
