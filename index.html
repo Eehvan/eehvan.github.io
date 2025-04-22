@@ -389,6 +389,51 @@ nav {
 
 
     
+/* Griglia di riquadri */
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Stile per ogni riquadro */
+.preview-box {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  position: relative;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Effetto di hover sul riquadro */
+.preview-box:hover {
+  transform: scale(1.05);
+}
+
+/* Immagine dentro il riquadro */
+.preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Titolo che appare sopra l'immagine */
+.preview-title {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
 
 
     
@@ -438,7 +483,26 @@ nav {
    </div>
   
 
-  
+  <!-- Div che contiene i riquadri -->
+<div class="preview-grid">
+  <div class="preview-box">
+    <img src="path_to_your_image.jpg" alt="Image 1">
+    <div class="preview-title">Riquadro 1</div>
+  </div>
+  <div class="preview-box">
+    <img src="path_to_your_image.jpg" alt="Image 2">
+    <div class="preview-title">Riquadro 2</div>
+  </div>
+  <div class="preview-box">
+    <img src="path_to_your_image.jpg" alt="Image 3">
+    <div class="preview-title">Riquadro 3</div>
+  </div>
+  <div class="preview-box">
+    <img src="path_to_your_image.jpg" alt="Image 4">
+    <div class="preview-title">Riquadro 4</div>
+  </div>
+</div>
+
 
 
 
