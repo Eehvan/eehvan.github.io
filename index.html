@@ -522,32 +522,60 @@ nav {
   </div>
   
 
-<!-- Sezione Embed Giochi -->
+<style>
+  /* Nasconde o mostra gli iframe a seconda della larghezza dello schermo */
+  .embed-desktop {
+    display: block;
+  }
+  .embed-mobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .embed-desktop {
+      display: none;
+    }
+    .embed-mobile {
+      display: block;
+    }
+  }
+</style>
+
 <div style="text-align: center; margin-top: 50px;">
   <h3 style="margin-bottom: 20px;">Check out the Sound Libraries I created with a Gaming Studio on Itch.io</h3>
   <p style="margin-bottom: 30px;">Explore my work and support my projects by playing or downloading them!</p>
 
-  <!-- Contenitore responsive -->
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
 
-    <!-- Primo gioco -->
+    <!-- Medieval Library -->
     <div style="flex: 1 1 500px; max-width: 552px;">
       <h4 style="margin-bottom: 10px;">Medieval Library</h4>
-      <iframe src="https://itch.io/embed/3460053" width="100%" height="167" frameborder="0" style="border: none;">
+
+      <!-- Versione desktop (pagina intera) -->
+      <iframe class="embed-desktop" src="https://jabszgamingstudios.itch.io/thefabledlute" width="100%" height="600" style="border: none;"></iframe>
+
+      <!-- Versione mobile (embed ufficiale) -->
+      <iframe class="embed-mobile" src="https://itch.io/embed/3460053" width="100%" height="167" frameborder="0" style="border: none;">
         <a href="https://jabszgamingstudios.itch.io/thefabledlute">Medieval Sound Pack: The Fabled Lute</a>
       </iframe>
     </div>
 
-    <!-- Secondo gioco -->
+    <!-- Ethnic Tribal Library -->
     <div style="flex: 1 1 500px; max-width: 552px;">
       <h4 style="margin-bottom: 10px;">Ethnic Tribal Library</h4>
-      <iframe src="https://itch.io/embed/3403139" width="100%" height="167" frameborder="0" style="border: none;">
+
+      <!-- Versione desktop -->
+      <iframe class="embed-desktop" src="https://jabszgamingstudios.itch.io/theforgottentones" width="100%" height="600" style="border: none;"></iframe>
+
+      <!-- Versione mobile -->
+      <iframe class="embed-mobile" src="https://itch.io/embed/3403139" width="100%" height="167" frameborder="0" style="border: none;">
         <a href="https://jabszgamingstudios.itch.io/theforgottentones">Tribal/Ancient Technology Sound Pack: The Forgotten Tones</a>
       </iframe>
     </div>
 
   </div>
 </div>
+
 
 
 
