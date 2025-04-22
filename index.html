@@ -389,6 +389,29 @@ nav {
 
 
 
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio, puoi cambiare per altri rapporti */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: 2rem; /* Spaziatura opzionale */
+}
+
+.responsive-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+    
+
 
     
   </style>
@@ -537,6 +560,29 @@ nav {
     </div>
   </div>
 </div>
+
+
+
+
+
+  <div class="responsive-iframe-container">
+  <iframe
+    src="https://thefabledlute.com/embed" 
+    frameborder="0"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+
+<div class="responsive-iframe-container">
+  <iframe
+    src="https://theforgottentones.com/embed" 
+    frameborder="0"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+
 
 
 
