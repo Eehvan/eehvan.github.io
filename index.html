@@ -392,119 +392,92 @@ nav {
 
 
     
-/* CSS base per la finestra a schermo intero */
+/* Contenitore della finestra a schermo intero */
 .full-screen-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
+  background-color: rgba(0, 0, 0, 0.8); /* Sfondo scuro */
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
+  visibility: hidden; /* Rendi invisibile inizialmente */
 }
 
+/* Contenuto della finestra a schermo intero */
 .full-screen-content {
   display: flex;
   width: 80%;
   height: 80%;
-  background-color: #fff;
+  background-color: white;
   border-radius: 10px;
   overflow: hidden;
 }
 
+/* Lato sinistro: video */
 .full-screen-left {
-  width: 60%;
-  height: 100%;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1; /* Occupa metà dello schermo */
+  background-color: black;
 }
 
 .full-screen-left video {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fa in modo che il video copra tutta l'area */
 }
 
+/* Lato destro: testo */
 .full-screen-right {
-  width: 40%;
+  flex: 1; /* Occupa metà dello schermo */
   padding: 20px;
   color: #333;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .full-screen-right h1 {
   font-size: 2rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .full-screen-right p {
   font-size: 1.2rem;
-  line-height: 1.5;
   margin-bottom: 20px;
 }
 
-.close-full-screen {
+.full-screen-right button {
+  padding: 10px 20px;
   background-color: #ab4e52;
   color: white;
   border: none;
-  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  border-radius: 5px;
+}
+
+.full-screen-right button:hover {
+  background-color: #9a3f44;
+}
+
+/* Pulsante close */
+.close-full-screen {
   position: absolute;
-  bottom: 20px;
+  top: 20px;
   right: 20px;
+  background-color: transparent;
+  border: none;
+  color: #ab4e52;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .close-full-screen:hover {
-  background-color: #ff2a2a;
+  color: #9a3f44;
 }
-
-/* Riquadri iniziali */
-.about-links-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.about-box {
-  width: 300px;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.about-box:hover {
-  transform: scale(1.03);
-}
-
-.about-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
-}
-
-.about-box span {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  z-index: 2;
-}
-
 
 
 
@@ -573,15 +546,15 @@ nav {
 <!-- Finestra a schermo intero -->
 <div id="full-screen-container" class="full-screen-container">
   <div class="full-screen-content">
-    <!-- Video placeholder (sinistra) -->
+    <!-- Lato sinistro: video placeholder -->
     <div class="full-screen-left">
       <video id="full-screen-video" width="100%" height="100%" autoplay muted loop>
-        <source src="immagini/demoreel.mp4" type="video/mp4"> <!-- Percorso del video -->
+        <source id="video-source" src="immagini/demoreel.mp4" type="video/mp4"> <!-- Percorso video -->
         Your browser does not support the video tag.
       </video>
     </div>
 
-    <!-- Testo descrizione (destra) -->
+    <!-- Lato destro: testo -->
     <div class="full-screen-right">
       <h1 id="full-screen-title">Project Title</h1>
       <p id="full-screen-text">This is the placeholder text for the selected project. You can describe details here.</p>
