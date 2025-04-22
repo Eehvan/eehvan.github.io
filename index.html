@@ -432,6 +432,59 @@ nav {
 }
 
 
+
+<head>
+    <style>
+        .about-me {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .grid-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            position: relative;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .square img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .square p {
+            margin: 10px 0;
+        }
+
+        .square:hover {
+            background-color: #f0f0f0;
+        }
+
+        .section {
+            padding: 20px;
+            margin-top: 50px;
+            background-color: #e3e3e3;
+        }
+
+        /* Nascondi la sezione inizialmente */
+        .section {
+            visibility: hidden; /* Le sezioni sono invisibili ma nel flusso */
+        }
+    </style>
+</head>
+
+
+
     
 
 
@@ -482,16 +535,38 @@ nav {
 
 
 
-<div class="about-links-container">
-  <a href="https://eehvan.github.io/#sounddesign" class="about-box">
-    <img src="animation.png" alt="Game Audio" />
-    <span>Game Audio</span>
-  </a>
-  <a href="https://eehvan.github.io/#animationprojects" class="about-box">
-    <img src="game.png" alt="Animation Projects" />
-    <span>Animation Projects</span>
-  </a>
+<!-- Sezione About Me con i riquadri -->
+<div class="about-me">
+    <h3>About Me</h3>
+
+    <!-- Riquadri link -->
+    <div class="grid-container">
+        <div class="square" id="gameAudioLink">
+            <a href="#sounddesign">
+                <img src="immagini/animation.png" alt="Game Audio">
+                <p>Game Audio</p>
+            </a>
+        </div>
+        <div class="square" id="animationProjectsLink">
+            <a href="#animationprojects">
+                <img src="immagini/game.png" alt="Animation Projects">
+                <p>Animation Projects</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sezioni che saranno scrollate -->
+    <div id="sounddesign" class="section" style="visibility: hidden;">
+        <h4>Game Audio</h4>
+        <p>Content for Game Audio...</p>
+    </div>
+
+    <div id="animationprojects" class="section" style="visibility: hidden;">
+        <h4>Animation Projects</h4>
+        <p>Content for Animation Projects...</p>
+    </div>
 </div>
+
 
 
 
@@ -876,6 +951,30 @@ menuLinks.forEach(link => {
 
 
   </script>
+
+
+
+  <body>
+    <!-- Tutto il tuo contenuto qui -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quando clicchi sui riquadri, lo scroll si attiva
+            document.getElementById('gameAudioLink').addEventListener('click', function() {
+                // Rendi visibile la sezione "sounddesign"
+                document.getElementById('sounddesign').style.visibility = 'visible';
+                window.location.hash = '#sounddesign';  // Questo fa lo scroll
+            });
+
+            document.getElementById('animationProjectsLink').addEventListener('click', function() {
+                // Rendi visibile la sezione "animationprojects"
+                document.getElementById('animationprojects').style.visibility = 'visible';
+                window.location.hash = '#animationprojects';  // Questo fa lo scroll
+            });
+        });
+    </script>
+</body>
+
   
 
 
