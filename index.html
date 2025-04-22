@@ -454,6 +454,7 @@ nav {
             cursor: pointer;
             border: 2px solid #ccc;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .project-box:hover {
@@ -464,6 +465,12 @@ nav {
             width: 100%;
             height: 200px;
             object-fit: cover;
+        }
+
+        .project-box p {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
         }
 
         /* Stile del Modal (lightbox) */
@@ -492,6 +499,7 @@ nav {
         .modal-left {
             flex: 1;
             padding: 20px;
+            text-align: center;
         }
 
         .modal-right {
@@ -521,11 +529,17 @@ nav {
             text-decoration: none;
             cursor: pointer;
         }
+
+        /* Stile per il video */
+        video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
-
-    
 
 
     
@@ -573,6 +587,8 @@ nav {
     </div>
     </div>
 
+  
+
 
 <!-- Sezione Progetti -->
 <div class="projects">
@@ -580,16 +596,16 @@ nav {
 
     <div class="project-grid">
         <!-- Riquadro 1 (Game Audio) -->
-        <div class="project-box">
-            <img src="immagini/project1.jpg" alt="Project 1" class="project-image" onclick="openModal('modal1')">
+        <div class="project-box" onclick="openModal('modal1')">
+            <img src="immagini/project1.jpg" alt="Project 1" class="project-image">
+            <p>Game Audio</p>
         </div>
 
         <!-- Riquadro 2 (Animation) -->
-        <div class="project-box">
-            <img src="immagini/project2.jpg" alt="Project 2" class="project-image" onclick="openModal('modal2')">
+        <div class="project-box" onclick="openModal('modal2')">
+            <img src="immagini/project2.jpg" alt="Project 2" class="project-image">
+            <p>Animation</p>
         </div>
-
-        <!-- Aggiungi altri riquadri se necessario -->
     </div>
 </div>
 
@@ -603,6 +619,10 @@ nav {
         <div class="modal-right">
             <h2>Project 1: Game Audio</h2>
             <p>Description of the game audio project goes here...</p>
+            <video width="100%" controls>
+                <source src="video/project1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </div>
@@ -617,6 +637,10 @@ nav {
         <div class="modal-right">
             <h2>Project 2: Animation</h2>
             <p>Description of the animation project goes here...</p>
+            <video width="100%" controls>
+                <source src="video/project2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </div>
