@@ -390,6 +390,9 @@ nav {
 
 
 
+
+    
+/* Riquadri cliccabili */
 .about-links-container {
   display: flex;
   gap: 20px;
@@ -428,6 +431,73 @@ nav {
   font-size: 1.2rem;
   font-weight: bold;
   z-index: 2;
+}
+
+/* Stile per la modale (pagina a schermo intero) */
+.full-screen-modal {
+  display: none; /* Nasconde la modale inizialmente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.modal-content {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  background: white;
+  border-radius: 10px;
+}
+
+.modal-left {
+  width: 60%;
+  background-color: #000;
+}
+
+.modal-right {
+  width: 40%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-right h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.modal-right p {
+  font-size: 1.1rem;
+}
+
+.close-modal {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.close-modal:hover {
+  background-color: #e53935;
+}
+
+/* Animazione di apertura */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 
@@ -477,17 +547,36 @@ nav {
     </div>
     </div>
   
+
+
   
 <div class="about-links-container">
-  <a href="#sounddesign" class="about-box">
-    <img src="animation.png" alt="Game Audio" />
+  <a href="javascript:void(0);" class="about-box" data-target="sounddesign">
+    <img src="immagini/sounddesign.jpg" alt="Game Audio" />
     <span>Game Audio</span>
   </a>
-  <a href="#animationprojects" class="about-box">
-    <img src="game.png" alt="Animation Projects" />
+  <a href="javascript:void(0);" class="about-box" data-target="animationprojects">
+    <img src="immagini/animation.jpg" alt="Animation Projects" />
     <span>Animation Projects</span>
   </a>
 </div>
+
+<!-- Modale (pagina a schermo intero) -->
+<div id="full-screen-modal" class="full-screen-modal">
+  <div class="modal-content">
+    <div class="modal-left">
+      <video id="modal-video" width="100%" height="100%" autoplay muted loop>
+        <source src="path_to_your_placeholder_video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="modal-right">
+      <h1 id="modal-title">Title</h1>
+      <p id="modal-text">This is the placeholder text for the selected project. You can add more detailed information here.</p>
+      <button id="close-modal" class="close-modal">Close</button>
+    </div>
+  </div>
+</div>
+
 
 
 
