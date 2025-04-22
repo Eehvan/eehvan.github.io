@@ -476,9 +476,9 @@ nav {
             background-color: #e3e3e3;
         }
 
-        /* Nascondi la sezione inizialmente */
+        /* Le sezioni devono essere visibili, niente di particolare */
         .section {
-            visibility: hidden; /* Le sezioni sono invisibili ma nel flusso */
+            visibility: visible;
         }
     </style>
 </head>
@@ -541,13 +541,13 @@ nav {
 
     <!-- Riquadri link -->
     <div class="grid-container">
-        <div class="square" id="gameAudioLink">
+        <div class="square">
             <a href="#sounddesign">
                 <img src="immagini/animation.png" alt="Game Audio">
                 <p>Game Audio</p>
             </a>
         </div>
-        <div class="square" id="animationProjectsLink">
+        <div class="square">
             <a href="#animationprojects">
                 <img src="immagini/game.png" alt="Animation Projects">
                 <p>Animation Projects</p>
@@ -556,16 +556,17 @@ nav {
     </div>
 
     <!-- Sezioni che saranno scrollate -->
-    <div id="sounddesign" class="section" style="visibility: hidden;">
+    <div id="sounddesign" class="section">
         <h4>Game Audio</h4>
         <p>Content for Game Audio...</p>
     </div>
 
-    <div id="animationprojects" class="section" style="visibility: hidden;">
+    <div id="animationprojects" class="section">
         <h4>Animation Projects</h4>
         <p>Content for Animation Projects...</p>
     </div>
 </div>
+
 
 
 
