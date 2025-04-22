@@ -434,6 +434,99 @@ nav {
 
 
 
+<head>
+    <style>
+        /* Stile dei riquadri con immagini */
+        .projects {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .project-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-box {
+            width: 45%;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .project-box:hover {
+            background-color: #f0f0f0;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Stile del Modal (lightbox) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px auto;
+            background-color: white;
+            max-width: 1200px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .modal-left {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .modal-right {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+    
+
 
     
   </style>
@@ -481,7 +574,55 @@ nav {
     </div>
 
 
+<!-- Sezione Progetti -->
+<div class="projects">
+    <h3>My Projects</h3>
 
+    <div class="project-grid">
+        <!-- Riquadro 1 (Game Audio) -->
+        <div class="project-box">
+            <img src="immagini/project1.jpg" alt="Project 1" class="project-image" onclick="openModal('modal1')">
+        </div>
+
+        <!-- Riquadro 2 (Animation) -->
+        <div class="project-box">
+            <img src="immagini/project2.jpg" alt="Project 2" class="project-image" onclick="openModal('modal2')">
+        </div>
+
+        <!-- Aggiungi altri riquadri se necessario -->
+    </div>
+</div>
+
+<!-- Modal per Progetto 1 -->
+<div id="modal1" class="modal">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <div class="modal-content">
+        <div class="modal-left">
+            <img src="immagini/project1.jpg" alt="Project 1" class="modal-image">
+        </div>
+        <div class="modal-right">
+            <h2>Project 1: Game Audio</h2>
+            <p>Description of the game audio project goes here...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal per Progetto 2 -->
+<div id="modal2" class="modal">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <div class="modal-content">
+        <div class="modal-left">
+            <img src="immagini/project2.jpg" alt="Project 2" class="modal-image">
+        </div>
+        <div class="modal-right">
+            <h2>Project 2: Animation</h2>
+            <p>Description of the animation project goes here...</p>
+        </div>
+    </div>
+</div>
+
+
+  
 
 
   </div>
