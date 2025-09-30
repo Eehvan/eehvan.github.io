@@ -1160,6 +1160,9 @@ menuLinks.forEach(link => {
   
 document.addEventListener('DOMContentLoaded', function() {
   const aboutBoxes = document.querySelectorAll('.about-box');
+  const featuredProjects = document.querySelectorAll('.featured-project');
+  const allBoxes = [...aboutBoxes, ...featuredProjects]; // Unisce tutti i riquadri
+
   const fullScreenContainer = document.getElementById('full-screen-container');
   const closeFullScreenBtn = document.getElementById('close-full-screen');
   const fullScreenTitle = document.getElementById('full-screen-title');
@@ -1168,7 +1171,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const videoSource = document.getElementById('video-source');
 
   // Aggiungi evento di click per ogni riquadro
-  aboutBoxes.forEach(box => {
+  allBoxes.forEach(box => {
     box.addEventListener('click', function(event) {
       event.preventDefault();
       const target = box.getAttribute('data-target');
@@ -1177,22 +1180,17 @@ document.addEventListener('DOMContentLoaded', function() {
       if (target === 'project1') {
         fullScreenTitle.textContent = 'Sound Re-Design';
         fullScreenText.textContent = 'Creative Sound Design applied to animation to change the atmosphere';
-        videoSource.src = 'Its fun to make these.mp4';  // Sostituisci con il percorso del video del progetto 1
+        videoSource.src = 'Its fun to make these.mp4';
       } else if (target === 'project2') {
         fullScreenTitle.textContent = 'Sound Re-Design';
         fullScreenText.textContent = 'I picked this scene because the Elden Beast gave me a lot of creative freedom and ideas. Creating sounds for something abstract is always helpful for experimenting and learning';
-        videoSource.src = 'elden beast link.mp4';  // Sostituisci con il percorso del video del progetto 2
-      }
+        videoSource.src = 'elden beast link.mp4';
+      } else if (target === 'featured1') {
+        fullScreenTitle.textContent = 'UX Audio Design for Glowbe Speaker';
+        fullScreenText.textContent = 'Test1';
+        videoSource.src = 'glowbevideo.mp4';
+      } else if (target === 'feature
 
-      else if (target === 'featured1') {
-       fullScreenTitle.textContent = 'UX Audio Design for Glowbe Speaker';
-       fullScreenText.textContent = 'Test1';
-       videoSource.src = 'glowbevideo.mp4'; // Sostituire con il percorso corretto del video
-  } else if (target === 'featured2') {
-       fullScreenTitle.textContent = 'Sound Design for Fantastic 4: First Steps ADV';
-       fullScreenText.textContent = 'Test2';
-       videoSource.src = 'F4PromoLongVersion.mp4'; // Sostituire con il percorso corretto del video
- }
 
 
 
