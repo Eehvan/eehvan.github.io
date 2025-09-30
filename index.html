@@ -1190,7 +1190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fullScreenTitle.textContent = 'UX Audio Design for Glowbe Speaker';
         fullScreenText.textContent = 'Test1';
         videoSource.src = 'glowbevideo.mp4';
-        fullScreenVideo.setAttribute('poster', 'glowbe.png');
+        fullScreenVideo.setAttribute('poster', 'GlowbeThumbnail.jpg');
       } else if (target === 'featured2') {
         fullScreenTitle.textContent = 'Sound Design for Fantastic 4: First Steps ADV';
         fullScreenText.textContent = 'Test2';
@@ -1204,6 +1204,20 @@ document.addEventListener('DOMContentLoaded', function() {
       fullScreenVideo.play();
     });
   });
+
+  // Chiusura finestra a schermo intero
+  closeFullScreenBtn.addEventListener('click', function() {
+    fullScreenContainer.style.display = 'none';
+    fullScreenVideo.pause();
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target === fullScreenContainer) {
+      fullScreenContainer.style.display = 'none';
+      fullScreenVideo.pause();
+    }
+  });
+});
 
   // Chiusura finestra a schermo intero
   closeFullScreenBtn.addEv
