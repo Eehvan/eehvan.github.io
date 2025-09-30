@@ -626,28 +626,6 @@ video {
 
 
 
-<section class="content" id="featured-projects" style="background-color: transparent; padding: 40px 20px;">
-  <h2>Featured Projects</h2>
-  <div class="about-links-container">
-    <a href="#" class="about-box" data-target="projectGlowbe">
-      <img src="glowbe.jpg" alt="UX Sounds for Glowbe Speaker" />
-      <span>UX Sounds for Glowbe Speaker</span>
-    </a>
-
-    <a href="#" class="about-box" data-target="projectF4">
-      <img src="fantastic4.jpg" alt="Sound Design for Fantastic 4: The Beginnings ADV" />
-      <span>Sound Design for Fantastic 4: The Beginnings ADV</span>
-    </a>
-  </div>
-</section>
-
-
-
-
-
-
-  
-
 <section class="content active" id="aboutme" style="background-color: transparent; padding: 40px 20px;">
   <h2>About Me</h2>
   <div class="about-container" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; background-color: transparent;">
@@ -1122,16 +1100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         fullScreenText.textContent = 'I picked this scene because the Elden Beast gave me a lot of creative freedom and ideas. Creating sounds for something abstract is always helpful for experimenting and learning';
         videoSource.src = 'elden beast link.mp4';  // Sostituisci con il percorso del video del progetto 2
       }
-
-      else if (target === 'projectGlowbe') {
-  fullScreenTitle.textContent = 'UX Sounds for Glowbe Speaker';
-  fullScreenText.textContent = 'A showcase of UX sound effects created for Glowbe Speaker interface.';
-  videoSource.src = 'glowbe_demo.mp4'; // sostituisci con il tuo file reale
-} else if (target === 'projectF4') {
-  fullScreenTitle.textContent = 'Sound Design for Fantastic 4: The Beginnings ADV';
-  fullScreenText.textContent = 'Sound design and audio implementation created for the Fantastic 4: The Beginnings ADV project.';
-  videoSource.src = 'fantastic4_demo.mp4'; // sostituisci con il tuo file reale
-}
 
 
       // Mostra la finestra a schermo intero
