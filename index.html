@@ -1180,18 +1180,22 @@ document.addEventListener('DOMContentLoaded', function() {
         fullScreenTitle.textContent = 'Sound Re-Design';
         fullScreenText.textContent = 'Creative Sound Design applied to animation to change the atmosphere';
         videoSource.src = 'Its fun to make these.mp4';
+        fullScreenVideo.setAttribute('poster', 'ItsFunThumbnail.jpg');
       } else if (target === 'project2') {
         fullScreenTitle.textContent = 'Sound Re-Design';
         fullScreenText.textContent = 'I picked this scene because the Elden Beast gave me a lot of creative freedom and ideas. Creating sounds for something abstract is always helpful for experimenting and learning';
         videoSource.src = 'elden beast link.mp4';
+        fullScreenVideo.setAttribute('poster', 'EldenBeastThumbnail.jpg');
       } else if (target === 'featured1') {
         fullScreenTitle.textContent = 'UX Audio Design for Glowbe Speaker';
         fullScreenText.textContent = 'Test1';
         videoSource.src = 'glowbevideo.mp4';
+        fullScreenVideo.setAttribute('poster', 'glowbe.png');
       } else if (target === 'featured2') {
         fullScreenTitle.textContent = 'Sound Design for Fantastic 4: First Steps ADV';
         fullScreenText.textContent = 'Test2';
         videoSource.src = 'F4PromoLongVersion.mp4';
+        fullScreenVideo.setAttribute('poster', 'F4Thumbnail.jpg');
       }
 
       // Mostra la finestra a schermo intero
@@ -1202,18 +1206,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Chiusura finestra a schermo intero
-  closeFullScreenBtn.addEventListener('click', function() {
-    fullScreenContainer.style.display = 'none';
-    fullScreenVideo.pause();
-  });
-
-  window.addEventListener('click', function(e) {
-    if (e.target === fullScreenContainer) {
-      fullScreenContainer.style.display = 'none';
-      fullScreenVideo.pause();
-    }
-  });
-});
+  closeFullScreenBtn.addEv
 
 
 
