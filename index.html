@@ -1161,7 +1161,7 @@ menuLinks.forEach(link => {
 document.addEventListener('DOMContentLoaded', function() {
   const aboutBoxes = document.querySelectorAll('.about-box');
   const featuredProjects = document.querySelectorAll('.featured-project');
-  const allBoxes = [...aboutBoxes, ...featuredProjects];
+  const allBoxes = [...aboutBoxes, ...featuredProjects]; // Unisce tutti i riquadri
 
   const fullScreenContainer = document.getElementById('full-screen-container');
   const closeFullScreenBtn = document.getElementById('close-full-screen');
@@ -1175,14 +1175,15 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
       const target = box.getAttribute('data-target');
 
+      // Modifica il contenuto in base al progetto selezionato
       if (target === 'project1') {
         fullScreenTitle.textContent = 'Sound Re-Design';
         fullScreenText.textContent = 'Creative Sound Design applied to animation to change the atmosphere';
-        videoSource.src = 'Its_fun_to_make_these.mp4';
+        videoSource.src = 'Its fun to make these.mp4';
       } else if (target === 'project2') {
         fullScreenTitle.textContent = 'Sound Re-Design';
         fullScreenText.textContent = 'I picked this scene because the Elden Beast gave me a lot of creative freedom and ideas. Creating sounds for something abstract is always helpful for experimenting and learning';
-        videoSource.src = 'elden_beast_link.mp4';
+        videoSource.src = 'elden beast link.mp4';
       } else if (target === 'featured1') {
         fullScreenTitle.textContent = 'UX Audio Design for Glowbe Speaker';
         fullScreenText.textContent = 'Test1';
@@ -1195,13 +1196,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Mostra la finestra a schermo intero
       fullScreenContainer.style.display = 'flex';
-
-      // Ricarica e riproduci il video
       fullScreenVideo.load();
       fullScreenVideo.play();
     });
   });
 
+  // Chiusura finestra a schermo intero
   closeFullScreenBtn.addEventListener('click', function() {
     fullScreenContainer.style.display = 'none';
     fullScreenVideo.pause();
@@ -1215,30 +1215,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
-      // Mostra la finestra a schermo intero
-      fullScreenContainer.style.display = 'flex';
-
-      // Forza il ricaricamento del video
-      fullScreenVideo.load();
-      fullScreenVideo.play();
-    });
-  });
-
-  // Gestisci il pulsante di chiusura della finestra a schermo intero
-  closeFullScreenBtn.addEventListener('click', function() {
-    fullScreenContainer.style.display = 'none';
-    fullScreenVideo.pause();
-  });
-
-  // Permette di chiudere la finestra cliccando fuori dalla finestra stessa
-  window.addEventListener('click', function(e) {
-    if (e.target === fullScreenContainer) {
-      fullScreenContainer.style.display = 'none';
-      fullScreenVideo.pause();
-    }
-  });
-});
 
 
 
