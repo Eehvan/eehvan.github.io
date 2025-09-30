@@ -696,44 +696,29 @@ video {
 <section class="content active" id="aboutme" style="background-color: transparent; padding: 40px 20px;">
   <h2>About Me</h2>
 
-<section class="content active" id="aboutme" style="background-color: transparent; padding: 40px 20px;">
-
-  <!-- Featured Projects subito all'inizio della sezione About Me -->
-  <div class="featured-projects-container">
-    <a href="#" class="featured-project" data-target="featured1">
-      <div class="overlay">
+  <!-- Featured Projects subito all'inizio della sezione -->
+  <div class="featured-projects-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px;">
+    <a href="#" class="featured-project" data-target="featured1" style="flex: 1 1 45%; text-align: center; position: relative;">
+      <img src="featured1.png" alt="UX Audio Design for Glowbe Speaker" style="width: 100%; border-radius: 12px;">
+      <div class="overlay" style="position: absolute; bottom: 15px; left: 15px; color: white; text-align: left;">
         <h2>UX Audio Design for Glowbe Speaker</h2>
         <p>Creative sound design for an innovative smart speaker interface</p>
       </div>
-      <img src="featured1.png" alt="UX Audio Design for Glowbe Speaker" />
     </a>
-    <a href="#" class="featured-project" data-target="featured2">
-      <div class="overlay">
+    <a href="#" class="featured-project" data-target="featured2" style="flex: 1 1 45%; text-align: center; position: relative;">
+      <img src="featured2.png" alt="Sound Design for Fantastic 4: First Steps ADV" style="width: 100%; border-radius: 12px;">
+      <div class="overlay" style="position: absolute; bottom: 15px; left: 15px; color: white; text-align: left;">
         <h2>Sound Design for Fantastic 4: First Steps ADV</h2>
         <p>Immersive game audio design for a first adventure of the Fantastic 4 series</p>
       </div>
-      <img src="featured2.png" alt="Sound Design for Fantastic 4: First Steps ADV" />
     </a>
   </div>
 
-  <!-- Qui inizia la bio -->
+  <!-- Bio -->
   <div class="about-container" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; background-color: transparent;">
-    ...
-  </div>
-</section>
-
-
-
-  
-
-  
-  <div class="about-container" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; background-color: transparent;">
-
-        <!-- FOTO -->
     <div class="about-photo" style="flex: 1 1 35%; text-align: center;">
       <img src="foto2.jpg" alt="Ivan Portrait" style="width: 100%; max-width: 300px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
     </div>
-    
     <div class="about-text" style="flex: 1 1 60%;">
       <p>I'm Ivan, a 25 years old musician and sound designer who is really passionate about videogames, music and all that concerns audio.</p>
       <p>Since I was a little kid, I would study and try to understand how music and sounds were implemented in the games I played to make them so impactful and remarkable.</p>
@@ -741,44 +726,38 @@ video {
       <p>Being a musician, I also like to add melodic components to my sound design to maintain a narrative and obtain even more creative effects out of an image!</p>
       <p><a href="https://drive.google.com/file/d/1WGZodX0-DwIqSoJ1EcbxCoJqQIUfsf7z/view?usp=sharing" style="color: #ab4e52;">Check my CV</a></p>
     </div>
-    </div>
-  
+  </div>
 
+  <!-- Check More -->
+  <div class="about-links-container" style="margin-top: 40px;">
+    <a href="#" class="about-box" data-target="project1">
+      <img src="game.png" alt="project1" />
+      <span>Check more</span>
+    </a>
+    <a href="#" class="about-box" data-target="project2">
+      <img src="animation.png" alt="project1" />
+      <span>Check more</span>
+    </a>
+  </div>
 
-
-  
-<div class="about-links-container">
-  <a href="#" class="about-box" data-target="project1">
-    <img src="game.png" alt="project1" />
-    <span>Check more</span>
-  </a>
-  <a href="#" class="about-box" data-target="project2">
-    <img src="animation.png" alt="project1" />
-    <span>Check more</span>
-  </a>
-</div>
-
-<div id="full-screen-container" class="full-screen-container">
-  <div class="full-screen-content">
-    <div class="full-screen-left">
-      <video id="full-screen-video" width="100%" height="100%" autoplay controls loop>
-        <source id="video-source" src="" type="video/mp4">
-      </video>
-    </div>
-    <div class="full-screen-right">
-      <h1 id="full-screen-title">Title</h1>
-      <p id="full-screen-text">More Projects</p>
-      <button id="close-full-screen" class="close-full-screen">Close</button>
+  <!-- Full-screen video container -->
+  <div id="full-screen-container" class="full-screen-container">
+    <div class="full-screen-content">
+      <div class="full-screen-left">
+        <video id="full-screen-video" width="100%" height="100%" autoplay controls loop>
+          <source id="video-source" src="" type="video/mp4">
+        </video>
+      </div>
+      <div class="full-screen-right">
+        <h1 id="full-screen-title">Title</h1>
+        <p id="full-screen-text">More Projects</p>
+        <button id="close-full-screen" class="close-full-screen">Close</button>
+      </div>
     </div>
   </div>
-</div>
 
-
-
-
-
-  </div>
 </section>
+
 
   <section class="video-section" id="demoreel">
     <h2>Demo Reel</h2>
