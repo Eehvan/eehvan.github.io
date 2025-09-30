@@ -590,6 +590,73 @@ video {
 
 
 
+
+
+
+
+    .featured-projects-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0 60px 0;
+}
+
+.featured-project {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(171, 78, 82, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.featured-project:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.6);
+}
+
+.featured-project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: rgba(10, 10, 10, 0.3);
+  transition: background 0.3s ease;
+}
+
+.featured-project:hover .overlay {
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.featured-project .overlay h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.featured-project .overlay p {
+  font-size: 1rem;
+}
+
+
     
 
 
@@ -623,6 +690,28 @@ video {
     <h1>IVAN BRUGOLO - CREATIVE PORTFOLIO</h1>
     <p>Take a peek at my ideas</p>
   </header>
+
+
+
+
+  <!-- Featured Projects subito sotto l'header -->
+<div class="featured-projects-container">
+  <a href="#" class="featured-project" data-target="featured1">
+    <div class="overlay">
+      <h2>UX Audio Design for Glowbe Speaker</h2>
+      <p>Creative sound design for an innovative smart speaker interface</p>
+    </div>
+    <img src="featured1.png" alt="UX Audio Design for Glowbe Speaker" />
+  </a>
+  <a href="#" class="featured-project" data-target="featured2">
+    <div class="overlay">
+      <h2>Sound Design for Fantastic 4: First Steps ADV</h2>
+      <p>Immersive game audio design for a first adventure of the Fantastic 4 series</p>
+    </div>
+    <img src="featured2.png" alt="Sound Design for Fantastic 4: First Steps ADV" />
+  </a>
+</div>
+
 
 
 
@@ -1100,6 +1189,17 @@ document.addEventListener('DOMContentLoaded', function() {
         fullScreenText.textContent = 'I picked this scene because the Elden Beast gave me a lot of creative freedom and ideas. Creating sounds for something abstract is always helpful for experimenting and learning';
         videoSource.src = 'elden beast link.mp4';  // Sostituisci con il percorso del video del progetto 2
       }
+
+      else if (target === 'featured1') {
+       fullScreenTitle.textContent = 'UX Audio Design for Glowbe Speaker';
+       fullScreenText.textContent = 'Creative sound design for an innovative smart speaker interface';
+       videoSource.src = 'featured1.mp4'; // Sostituire con il percorso corretto del video
+  } else if (target === 'featured2') {
+       fullScreenTitle.textContent = 'Sound Design for Fantastic 4: First Steps ADV';
+       fullScreenText.textContent = 'Immersive game audio design for a first adventure of the Fantastic 4 series';
+       videoSource.src = 'featured2.mp4'; // Sostituire con il percorso corretto del video
+ }
+
 
 
       // Mostra la finestra a schermo intero
